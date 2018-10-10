@@ -1,0 +1,29 @@
+  .nav .item {
+    display: inline-block;
+    text-align: center;
+    height: 30px;
+  }
+
+  .nav
+  {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: fixed;
+    width: 100%;
+  }
+
+  .top-right-menu
+  {
+      float: right;
+      font-size: 18px;
+      padding: 0;
+      padding-left: 10px;
+      margin: 0;
+      font-weight: 100;
+      color: white;
+  }
+
+  .name
+  {
+    letter-spacing: 0.5px;
+    font-weight: 400;
+  }
