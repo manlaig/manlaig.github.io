@@ -1,8 +1,8 @@
 {
-  "name": "manlaig",
+  "name": "manlaig@github.com",
   "description": "portfolio",
   "version": "1.0.0",
-  "author": "Michael Ganzorig <mathews.kyle@gmail.com>",
+  "author": "Michael Ganzorig <manlai1025@gmail.com>",
   "dependencies": {
     "gatsby": "^2.0.0",
     "gatsby-plugin-catch-links": "^2.0.4",
@@ -32,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/manlaig/manlaig.github.io"
+    "url": "https://manlaig.github.io/"
   }
 }

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Michael Ganzorig',
-    pathPrefix: "/manlaig.github.io",
   },
+  pathPrefix: "/blog",
   
   plugins: [
     "gatsby-plugin-catch-links",
