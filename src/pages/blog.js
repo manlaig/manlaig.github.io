@@ -2,20 +2,21 @@ import Layout from '../components/layout'
 import React from 'react';
 import { Link } from 'gatsby'
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Paper from '@material-ui/core/Paper';
 
 export default function Blog({ data }) {
   const { edges: posts } = data.allMarkdownRemark
   return (
     <Layout>
       <div className="blog-posts">
+      <h1>Posts</h1>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
             <Link to={post.frontmatter.path} style={{ textDecoration: 'none' }}>
-              <Card id="card-blog">
+              <Paper id="card-blog">
                 <div style={{flex: 1}}>
                   <CardContent>
                     <Typography variant="headline" color="textPrimary">
@@ -29,7 +30,7 @@ export default function Blog({ data }) {
                     </Typography>
                   </CardContent>
                 </div>
-              </Card>
+              </Paper>
             </Link>
           )
         })}
