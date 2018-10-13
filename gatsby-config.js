@@ -1,8 +1,8 @@
 module.exports = {
+  pathPrefix: '/blog',
   siteMetadata: {
     title: 'Michael Ganzorig',
   },
-  pathPrefix: "/blog",
   
   plugins: [
     "gatsby-plugin-catch-links",
