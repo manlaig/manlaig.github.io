@@ -26,7 +26,7 @@ export default function Blog({ data }) {
                     {post.frontmatter.date}
                     </Typography>
                     <Typography variant="subtitle2">
-                    {post.excerpt}
+                    {post.frontmatter.excerpt}
                     </Typography>
                   </CardContent>
                 </div>
@@ -44,12 +44,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          
           id
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            excerpt
           }
         }
       }

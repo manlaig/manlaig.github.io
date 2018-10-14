@@ -33,9 +33,9 @@ const styles = theme => ({
 
 var projects = [
   {
-    title: "AR Draw",
+    title: "1",
     image: "",
-    description: "Augmented Reality drawing app in Unity",
+    description: "first",
     link: "http://github.com/manlaig/AR_Draw",
   },
   {
