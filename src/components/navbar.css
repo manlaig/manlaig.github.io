@@ -1,4 +1,5 @@
-  .nav .item {
+  .nav .item
+  {
     display: inline-block;
     text-align: center;
     height: 30px;
@@ -25,4 +26,11 @@
   {
     letter-spacing: 0.5px;
     font-weight: 400;
+  }
+
+  @media screen and (max-width: 480px) {
+    .nav
+    {
+      white-space: nowrap;
+    }
   }
