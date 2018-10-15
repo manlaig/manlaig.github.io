@@ -23,7 +23,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deploy": "gatsby build && gh-pages -b gh-pages -d public",
+    "deploy": "gatsby build && gh-pages -b master -d public",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
