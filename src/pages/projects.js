@@ -114,4 +114,4 @@ GridProjects.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(GridProjects);
+export default GridProjects;
