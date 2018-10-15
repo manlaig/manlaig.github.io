@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/layout'
@@ -10,16 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
-
-const styles = theme => ({
-  paper: {
-    /*padding: theme.spacing.unit,*/
-    color: theme.palette.text.secondary,
-    textAlign: 'center',
-    maxWidth: 340,
-    marginBottom: 40
-  },
-});
 
 var projects = [
   {
@@ -61,10 +49,11 @@ var projects = [
 
 export function ProjectCard(props) 
 {
-    const { classes } = props;
     return (
       <Grid item>
-        <Paper className={classes.paper}>
+        <Paper style={{ textAlign: 'center',
+          maxWidth: 340,
+          marginBottom: 40}}>
         <CardMedia style = {{ height: 0,
           paddingTop: '56%',
           objectFit: 'cover',
@@ -94,15 +83,14 @@ export function ProjectCard(props)
     );
 }
 
-export function GridProjects(props)
+export default function GridProjects(props)
 {
-  const { classes } = props;
   return (
     <Layout>
       <h1>Projects</h1>
       <Grid container justify="center" spacing="40">
       {projects.map(proj => { 
-        return (<ProjectCard classes={classes}
+        return (<ProjectCard
                 title={proj.title} image={proj.image}
                 description={proj.description}
                 link={proj.link} more={proj.more}/>);
@@ -111,9 +99,3 @@ export function GridProjects(props)
     </Layout>
   );
 }
-
-GridProjects.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(GridProjects);
