@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/layout'
@@ -9,6 +10,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
+
+const styles = theme => ({
+  paper: {
+    padding: theme.spacing.unit,
+    color: theme.palette.text.secondary,
+    textAlign: 'center',
+    maxWidth: 345,
+    marginBottom: 40
+  },
+});
 
 var projects = [
   {
@@ -86,8 +97,9 @@ function ProjectCard(props)
     );
 }
 
-function GridProjects(props)
-{
+function GridProjects(props) {
+  const { classes } = props;
+
   return (
     <Layout>
       <h1>Projects</h1>
@@ -107,4 +119,4 @@ GridProjects.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default GridProjects;
+export default withStyles(styles)(GridProjects);
