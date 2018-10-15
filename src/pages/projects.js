@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/layout'
@@ -11,25 +10,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    
-  },
-  paper: {
-    padding: theme.spacing.unit,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    maxWidth: 345,
-    marginBottom: 40
-  },
-  media: {
-    objectFit: 'cover',
-    marginBottom: 0,
-    paddingBottom: 0,
-  },
-});
-
 var projects = [
   {
     title: "Survival Rush",
@@ -39,17 +19,17 @@ var projects = [
     more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush"
   },
   {
-    title: "AR Draw",
-    image: "/static/images/ar-draw.gif",
-    description: "Persistent Augmented Reality drawing app",
-    link: "https://github.com/manlaig/ar_draw",
-    more: ""
-  },
-  {
     title: "Pong AI",
     image: "/static/images/pong-bots.gif",
     description: "A Deep Neural Network that plays Pong",
     link: "https://github.com/manlaig/pong_bots",
+    more: ""
+  },
+  {
+    title: "AR Draw",
+    image: "/static/images/ar-draw.gif",
+    description: "Persistent Augmented Reality drawing app",
+    link: "https://github.com/manlaig/ar_draw",
     more: ""
   },
   {
@@ -70,11 +50,18 @@ var projects = [
 
 function ProjectCard(props) 
 {
-    const { classes } = props;
     return (
       <Grid item>
-        <Paper className={classes.paper}>
-        <CardMedia style = {{ height: 0, paddingTop: '56%'}} className={classes.media}
+        <Paper style={{
+          textAlign: 'center',
+          maxWidth: 345,
+          marginBottom: 40
+        }}>
+        <CardMedia style = {{ height: 0,
+          paddingTop: '56%',
+          objectFit: 'cover',
+          marginBottom: 0,
+          paddingBottom: 0,}}
           image={props.image}/>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h5">
@@ -99,13 +86,19 @@ function ProjectCard(props)
     );
 }
 
-function GridProjects(props) {
-  const { classes } = props;
-
+function GridProjects(props)
+{
   return (
     <Layout>
       <h1>Projects</h1>
-
+      <Grid container justify="center" spacing="40">
+      {projects.map(proj => { 
+        return (<ProjectCard
+                title={proj.title} image={proj.image}
+                description={proj.description}
+                link={proj.link} more={proj.more}/>);
+      })}
+      </Grid>
     </Layout>
   );
 }
