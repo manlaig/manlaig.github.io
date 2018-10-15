@@ -105,14 +105,7 @@ function GridProjects(props) {
   return (
     <Layout className={classes.root}>
       <h1>Projects</h1>
-      <Grid container justify="center" spacing="40">
-      {projects.map(proj => { 
-        return (<ProjectCard classes={classes} 
-                title={proj.title} image={proj.image}
-                description={proj.description}
-                link={proj.link} more={proj.more}/>);
-      })}
-      </Grid>
+
     </Layout>
   );
 }
