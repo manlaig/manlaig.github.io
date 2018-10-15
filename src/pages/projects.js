@@ -103,7 +103,7 @@ function GridProjects(props) {
   const { classes } = props;
 
   return (
-    <Layout className={classes.root}>
+    <Layout>
       <h1>Projects</h1>
 
     </Layout>
