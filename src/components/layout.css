@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   background: #f0f0f0;
+  vertical-align: middle;
 }
 article,
 aside,
@@ -383,6 +384,7 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-family: Palatino;
 }
 figure {
   margin-left: 0;
