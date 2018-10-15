@@ -47,7 +47,7 @@ function NavBarLink(props)
     <Link
       to={props.to}
       style={{
-        fontSize: '20px',
+        fontSize: '22px',
         textDecoration: 'none',
         color: 'rgba(255,255,255,0.75)',
         marginRight: '20px'
@@ -121,7 +121,7 @@ class PrimarySearchAppBar extends React.Component
     return (
       <div className={classes.root} class="nav">
         <AppBar position="static" style={{background: "#363640"}}>
-          <Toolbar style={{ height: 30 }}>
+          <Toolbar>
             <Link to="/" style={{textDecoration:'none', color:'#FFF'}}><div class="name">Michael Ganzorig</div></Link>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
