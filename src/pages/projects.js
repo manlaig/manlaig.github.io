@@ -24,7 +24,6 @@ const styles = theme => ({
     marginBottom: 40
   },
   media: {
-    // ⚠️ object-fit is not supported by IE11.
     objectFit: 'cover',
     marginBottom: 0,
     paddingBottom: 0,
@@ -33,22 +32,39 @@ const styles = theme => ({
 
 var projects = [
   {
-    title: "1",
-    image: "",
-    description: "first",
-    link: "http://github.com/manlaig/AR_Draw",
+    title: "Survival Rush",
+    image: "/static/images/survival-rush.gif",
+    description: "A fun survival game for iOS and Android",
+    link: "https://github.com/manlaig/survival_rush",
+    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush"
   },
   {
-    title: "2",
-    image: "",
-    description: "second",
-    link: "",
+    title: "AR Draw",
+    image: "/static/images/ar-draw.gif",
+    description: "Persistent Augmented Reality drawing app",
+    link: "https://github.com/manlaig/ar_draw",
+    more: ""
   },
   {
-    title: "3",
-    image: "",
-    description: "third",
-    link: "",
+    title: "Pong AI",
+    image: "/static/images/pong-bots.gif",
+    description: "A Deep Neural Network that plays Pong",
+    link: "https://github.com/manlaig/pong_bots",
+    more: ""
+  },
+  {
+    title: "Multiplayer Chess",
+    image: "/static/images/chess-app.png",
+    description: "Real-time chess and messaging app on the web",
+    link: "https://github.com/manlaig/LiveChess",
+    more: "http://chess-manlaig.herokuapp.com/"
+  },
+  {
+    title: "Weather App",
+    image: "/static/images/weather-app.png",
+    description: "Current weather data displayer web app",
+    link: "https://github.com/manlaig/weather_forecast",
+    more: "http://weather-manlaig.herokuapp.com"
   },
 ];
 
@@ -57,14 +73,9 @@ function ProjectCard(props)
     const { classes } = props;
     return (
       <Grid item>
-        <Paper className={classes.paper} id="card-projects">
-                <CardMedia
-                component="img"
-                alt="Project Image"
-                className={classes.media}
-                height="150"
-                image="../images/gatsby-icon.png"
-                />
+        <Paper className={classes.paper} id="card-projects" style={{width:380, height:380}}>
+        <CardMedia style = {{ height: 0, paddingTop: '56%'}} className={classes.media}
+     image={props.image}/>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h5">
                         {props.title}
@@ -74,7 +85,7 @@ function ProjectCard(props)
                     </Typography>
                 </CardContent>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" href={props.more}>
                   Learn More
                 </Button>
                 <Button size="small" color="primary" href={props.link}>
@@ -99,7 +110,7 @@ function GridProjects(props) {
         return (<ProjectCard classes={classes} 
                 title={proj.title} image={proj.image}
                 description={proj.description}
-                link={proj.link}/>);
+                link={proj.link} more={proj.more}/>);
       })}
       </Grid>
     </Layout>
