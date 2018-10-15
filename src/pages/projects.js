@@ -13,10 +13,10 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 const styles = theme => ({
   paper: {
-    padding: theme.spacing.unit,
+    /*padding: theme.spacing.unit,*/
     color: theme.palette.text.secondary,
     textAlign: 'center',
-    maxWidth: 345,
+    maxWidth: 340,
     marginBottom: 40
   },
 });
@@ -59,15 +59,12 @@ var projects = [
   },
 ];
 
-function ProjectCard(props) 
+export function ProjectCard(props) 
 {
+    const { classes } = props;
     return (
       <Grid item>
-        <Paper style={{
-          textAlign: 'center',
-          maxWidth: 345,
-          marginBottom: 40
-        }}>
+        <Paper className={classes.paper}>
         <CardMedia style = {{ height: 0,
           paddingTop: '56%',
           objectFit: 'cover',
@@ -97,15 +94,15 @@ function ProjectCard(props)
     );
 }
 
-function GridProjects(props) {
+export function GridProjects(props)
+{
   const { classes } = props;
-
   return (
     <Layout>
       <h1>Projects</h1>
       <Grid container justify="center" spacing="40">
       {projects.map(proj => { 
-        return (<ProjectCard
+        return (<ProjectCard classes={classes}
                 title={proj.title} image={proj.image}
                 description={proj.description}
                 link={proj.link} more={proj.more}/>);
