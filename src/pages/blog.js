@@ -19,6 +19,7 @@ export default function Blog({ data }) {
       <Layout>
         <div className="blog-posts">
         <h1>Posts</h1>
+        <div id="quote"><i>"Men learn while they teach" - Seneca</i></div>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {

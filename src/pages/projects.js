@@ -102,6 +102,7 @@ export default class GridProjects extends Component
       <MuiThemeProvider theme={theme}>
       <Layout>
         <h1>Projects</h1>
+        <div id="quote"><i>"First, solve the problem. Then, write the code." - John Johnson</i></div>
         <Grid container justify="center" spacing="40">
         {projects.map(proj => { 
           return (<ProjectCard
