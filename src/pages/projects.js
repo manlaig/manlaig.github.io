@@ -9,6 +9,13 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Verdana, sans-serif',
+  },
+});
 
 var projects = [
   {
@@ -56,7 +63,7 @@ export class ProjectCard extends Component
       <Grid item>
         <Paper style={{ textAlign: 'center',
           maxWidth: 340,
-          marginBottom: 40}} id="card-projects">
+          marginBottom: 20}} id="card-projects">
         <CardMedia style = {{ height: 0,
           paddingTop: '56%',
           objectFit: 'cover',
@@ -92,6 +99,7 @@ export default class GridProjects extends Component
   render()
   {
     return (
+      <MuiThemeProvider theme={theme}>
       <Layout>
         <h1>Projects</h1>
         <Grid container justify="center" spacing="40">
@@ -103,6 +111,7 @@ export default class GridProjects extends Component
         })}
         </Grid>
       </Layout>
+      </MuiThemeProvider>
     );
   }
 }
