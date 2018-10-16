@@ -53,7 +53,7 @@ export function ProjectCard(props)
       <Grid item>
         <Paper style={{ textAlign: 'center',
           maxWidth: 340,
-          marginBottom: 40}}>
+          marginBottom: 40}} id="card-projects">
         <CardMedia style = {{ height: 0,
           paddingTop: '56%',
           objectFit: 'cover',

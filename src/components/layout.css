@@ -199,7 +199,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Palatino;
+  /*font-family: Palatino;*/
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
