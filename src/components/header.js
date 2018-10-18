@@ -122,7 +122,7 @@ class PrimarySearchAppBar extends React.Component
       <div className={classes.root} class="nav">
         <AppBar style={{background: "#363640"}}>
           <Toolbar>
-            <Link to="/" style={{textDecoration:'none', color:'#FFF'}}><div class="name">Michael Ganzorig</div></Link>
+            <Link to="/" title="Go to Home" style={{textDecoration:'none', color:'#FFF'}}><div class="name">Michael Ganzorig</div></Link>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
                 <NavBarLink to="/about" title="About"/>

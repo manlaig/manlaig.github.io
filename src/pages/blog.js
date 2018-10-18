@@ -10,7 +10,7 @@ export class BlogPost extends Component
   render()
   {
     return (
-    <Link to={this.props.path} style={{ textDecoration: 'none' }}>
+    <Link to={this.props.path} style={{ textDecoration: 'none' }} title="Read Post">
       <Paper id="card-blog">
         <div style={{flex: 1}}>
           <CardContent>

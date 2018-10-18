@@ -38,7 +38,7 @@ export default function Blog({ data })
             )
           })}
       <Grid container justify="center">
-        <Link to="/blog" style={{textDecoration:'none'}}>
+        <Link to="/blog" style={{textDecoration:'none'}} title="Go to Blog">
           <Button variant="contained" size="large">
             More posts
           </Button>
