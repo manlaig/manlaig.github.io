@@ -30,14 +30,14 @@ var projects = [
     image: "/static/images/pong-bots.gif",
     description: "A Deep Neural Network that plays Pong",
     link: "https://github.com/manlaig/pong_bots",
-    more: ""
+    more: "https://manlaig.github.io/pong_bots"
   },
   {
     title: "AR Draw",
     image: "/static/images/ar-draw.gif",
     description: "Persistent Augmented Reality drawing app",
     link: "https://github.com/manlaig/ar_draw",
-    more: ""
+    more: "https://manlaig.github.io/AR_draw/"
   },
   {
     title: "Multiplayer Chess",
@@ -102,7 +102,7 @@ export default class GridProjects extends Component
       <MuiThemeProvider theme={theme}>
       <Layout>
         <h1>Projects</h1>
-        <div id="quote"><i>"First, solve the problem. Then, write the code." - John Johnson</i></div>
+        
         <Grid container justify="center" spacing="40">
         {projects.map(proj => { 
           return (<ProjectCard
