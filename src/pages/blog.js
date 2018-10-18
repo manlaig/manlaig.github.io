@@ -1,9 +1,35 @@
 import Layout from '../components/layout'
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'gatsby'
 import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import Paper from '@material-ui/core/Paper';
+
+export class BlogPost extends Component
+{
+  render()
+  {
+    return (
+    <Link to={this.props.path} style={{ textDecoration: 'none' }}>
+      <Paper id="card-blog">
+        <div style={{flex: 1}}>
+          <CardContent>
+            <Typography variant="h5" color="textPrimary">
+            {this.props.title}
+            </Typography>
+            <Typography variant="caption" color="textSecondary" paragraph>
+            {this.props.date}
+            </Typography>
+            <Typography variant="subtitle2">
+            {this.props.excerpt}
+            </Typography>
+          </CardContent>
+        </div>
+      </Paper>
+    </Link>
+    );
+  }
+}
 
 export default function Blog({ data }) {
   const { edges: posts } = data.allMarkdownRemark
@@ -16,23 +42,8 @@ export default function Blog({ data }) {
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
-              <Link to={post.frontmatter.path} style={{ textDecoration: 'none' }}>
-                <Paper id="card-blog">
-                  <div style={{flex: 1}}>
-                    <CardContent>
-                      <Typography variant="h5" color="textPrimary">
-                      {post.frontmatter.title}
-                      </Typography>
-                      <Typography variant="caption" color="textSecondary" paragraph>
-                      {post.frontmatter.date}
-                      </Typography>
-                      <Typography variant="subtitle2">
-                      {post.frontmatter.excerpt}
-                      </Typography>
-                    </CardContent>
-                  </div>
-                </Paper>
-              </Link>
+              <BlogPost path={post.frontmatter.path} title={post.frontmatter.title}
+                        date={post.frontmatter.date} excerpt={post.frontmatter.excerpt} />
             )
           })}
         </div>

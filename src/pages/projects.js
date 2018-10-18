@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
 
-var projects = [
+export const projects = [
   {
     title: "Survival Rush",
     image: "/static/images/survival-rush.gif",
@@ -57,20 +57,20 @@ export class ProjectCard extends Component
         <Paper style={{ textAlign: 'center',
           maxWidth: 340,
           marginBottom: 20}} id="card-projects">
-        <CardMedia style = {{ height: 0,
-          paddingTop: '56%',
-          objectFit: 'cover',
-          marginBottom: 0,
-          paddingBottom: 0,}}
-          image={this.props.image}/>
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h5">
-                        {this.props.title}
-                    </Typography>
-                    <Typography component="p">
-                        {this.props.description}
-                    </Typography>
-                </CardContent>
+            {this.props.showImage && <CardMedia style = {{ height: 0,
+              paddingTop: '56%',
+              objectFit: 'cover',
+              marginBottom: 0,
+              paddingBottom: 0,}}
+              image={this.props.image}/>}
+              <CardContent>
+                  <Typography gutterBottom variant="h5" component="h5">
+                      {this.props.title}
+                  </Typography>
+                  <Typography component="p">
+                      {this.props.description}
+                  </Typography>
+              </CardContent>
             <CardActions>
                 <Button size="small" color="primary" href={this.props.more} target="_blank">
                   Learn More
@@ -97,7 +97,7 @@ export default class GridProjects extends Component
         <div id="quote"><i>"First, solve the problem. Then, write the code." - John Johnson</i></div>
         <Grid container justify="center" spacing="40">
         {projects.map(proj => { 
-          return (<ProjectCard
+          return (<ProjectCard showImage={true}
                   title={proj.title} image={proj.image}
                   description={proj.description}
                   link={proj.link} more={proj.more}/>);
