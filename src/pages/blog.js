@@ -1,21 +1,13 @@
 import Layout from '../components/layout'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import React from 'react';
 import { Link } from 'gatsby'
 import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import Paper from '@material-ui/core/Paper';
 
-const theme = createMuiTheme({
-  typography: {
-    fontFamily: 'Georgia',
-  },
-});
-
 export default function Blog({ data }) {
   const { edges: posts } = data.allMarkdownRemark
   return (
-    <MuiThemeProvider theme={theme}>
       <Layout>
         <div className="blog-posts">
         <h1>Posts</h1>
@@ -45,7 +37,6 @@ export default function Blog({ data }) {
           })}
         </div>
       </Layout>
-    </MuiThemeProvider>
   )
 }
 
