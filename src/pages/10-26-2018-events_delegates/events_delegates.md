@@ -2,7 +2,7 @@
 path: "/events-delegates"
 date: "2018-10-26T20:12:33.962Z"
 title: "Using Events and Delegates in Unity"
-excerpt: ""
+excerpt: "Events and Delegates allow you notify other classes when a certain action happens. This writing will try to explain what events and delegates are and how to use them."
 ---
 
 Let’s say you’re writing a function that does something when the user clicks on the mouse. The most obvious and inefficient solution might be to check if the mouse is clicked in some update function that is called every frame. It might look like:
@@ -59,3 +59,4 @@ First, we declare a delegate `Del` with return type `void` and no parameters. Wh
 
 When we run `delInstance()`, that calls all the functions stored in `delInstance`.
 
+>STILL WRITING

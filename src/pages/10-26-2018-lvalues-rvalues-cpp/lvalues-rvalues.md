@@ -58,3 +58,11 @@ In summary, everything that's defined (have memory address in program memory) is
 rvalue is the opposite of lvalue. They are expressions and temporary values that don't have location in the memory.
 
 If you recall taht everything that's defined and has a name is a lvalue, then anything that doesn't have a name is a rvalue.
+
+### Conversion between rvalue and lvalue
+
+there is an implicit conversion from lvalue to rvalue in function arguments
+
+### Move constructor
+
+>STILL WRITING
