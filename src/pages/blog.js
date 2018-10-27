@@ -38,6 +38,7 @@ export default function Blog({ data }) {
         <div className="blog-posts">
         <h1>Posts</h1>
         <div id="quote"><i>"Men learn while they teach" - Seneca</i></div>
+        <div id="quote"><i>"If you can't explain it simply, then you don't understand it well enough" - Albert Einstein</i></div>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
@@ -55,8 +56,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
-        node {
-          
+        node {      
           id
           frontmatter {
             title
