@@ -97,7 +97,7 @@ export default class GridProjects extends Component
     return (
       <Layout>
         <h1>Projects</h1>
-        <div id="quote"><i>"First, solve the problem. Then, write the code." - John Johnson</i></div>
+        <div id="quote"><i>"What I cannot create, I do not understand." - Richard Feynman</i></div>
         <Grid container justify="center" spacing="40">
         {projects.map(proj => { 
           return (<ProjectCard showImage={true}

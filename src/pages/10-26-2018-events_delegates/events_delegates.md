@@ -5,29 +5,33 @@ title: "Using Events and Delegates in Unity"
 excerpt: "Events and Delegates allow you notify other classes when a certain action happens. This writing will try to explain what events and delegates are and how to use them."
 ---
 
-Let’s say you’re writing a function that does something when the user clicks on the mouse. The most obvious and inefficient solution might be to check if the mouse is clicked in some update function that is called every frame. It might look like:
+Let’s say you’re writing a function that does something when the user touches on the screen. The most obvious solution might be to check the touch input in some function that is called every frame. In Unity, it might look like this:
 
 ```
 void Update()
 {
-  if(Input.mousePress() > 0)
+  if(Input.touchCount > 0)
      doSomething();
 }
 ```
 
-But, this is very inefficient and it’s a bad code design. Why? Because what if you want other functions in different classes to respond to mouse clicks also. Then, you might have an if statement checking mouse click and calling all those static functions or you might have update functions in each class checking for mouse clicks. Either way, this is an example of bad code.
+But, this is very inefficient and it’s bad code. Why? Because what if you want other functions in different classes to respond to touch input also. Then, you might need to make this `if` statement longer or you might have update functions in each classes checking for touch inputs. Either way, this is bad code. 
 
-We need a better solution. Events are perfect fit for this situation.
+We need a better solution. Events are perfect for this situation.
 
-If you’re coding a game, you want to structure your code, in a way that doesn’t make different components depend on each other, events can be very useful in this case. 
+If you’re coding a game, you want to structure your code in a way that doesn’t make different components depend on each other, events can be very useful for that.
 
-In short, **events allow you to get notified on actions and notify other classes on actions.** 
+### Definition
+In short, **events allow you to listen and notify other classes for actions.** 
 
-To declare an event, you first need a delegate.
->A delegate is an object that stores functions.
+Events depend on **delegates**, to understand events we first need to know about delegates.
+>**A delegate is an object that stores functions.**
 
 This is the syntax for declaring a delegate: 
-`delegate returnType name([parameters]);`
+```
+delegate returnType name([parameters]);
+```
+The parameters are optional.
 
 Here's an example of a delegate in C#:
 ```
@@ -45,7 +49,7 @@ class MainClass
     Console.WriteLine("Func2");
   }
 
-  public static void Main (string[] args)
+  public static void Main(string[] args)
   {
     Del delInstance = null;
     delInstance += func;
@@ -54,7 +58,6 @@ class MainClass
   }
 }
 ```
-Let's go over this class line by line.
 First, we declare a delegate `Del` with return type `void` and no parameters. What that means is that all functions `Del` stores must have a return type of `void` and no paremeters. We can see that `func` and `func2` satisfies these specifications. So, they can be stored in `delInstance`.
 
 When we run `delInstance()`, that calls all the functions stored in `delInstance`.

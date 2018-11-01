@@ -24,7 +24,7 @@ So, we can see that we need lvalue as the left operand, the compiler is telling 
 lvalue means “locator value.” Overly simply explanation, lvalue is an object that can be the left operand of assignment because initially, lvalues meant objects that can be placed on the left side of an assignment operator.
 
 Definition:
->lvalue is any object that has location in memory of the program.
+>**lvalue is any object that has location in memory of the program.**
 
 This explains why we got the previous error, it’s because `10` doesn’t have a location in memory, it’s not a lvalue.
 
@@ -37,7 +37,7 @@ Here, `i` is declared, so it has a location in memory, which means i is a lvalue
 
 ### lvalue reference
 This writing will go over two types of references: lvalue reference and rvalue reference. I will talk about rvalue references later in this writing. But now, what is a lvalue reference?
->lvalue reference is a reference to a lvalue (existing object that's present in the memory of the program)
+>**lvalue reference is a reference to a lvalue (existing object that's present in the memory of the program)**
 
 lvalue references are created using the `&` operator. For example,
 ```
