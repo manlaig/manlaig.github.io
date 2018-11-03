@@ -5,7 +5,7 @@ title: "lvalues and rvalues in C++"
 excerpt: "Understanding lvalues and rvalues will give you more deeper understanding of C++. You will get better idea C++ move constructors, rvalue references, assignments, operators, and more."
 ---
 Take a look at this code:
-```
+```c++
 int main()
 {
     10 = 1;
@@ -13,7 +13,7 @@ int main()
 ```
 Weird, right? We never see someone writing code like this. If we run this code, the get:
 
-```
+```c++
 error: lvalue required as left operand of assignment
 10 = 1;
 ```
@@ -29,7 +29,7 @@ Definition:
 This explains why we got the previous error, it’s because `10` doesn’t have a location in memory, it’s not a lvalue.
 
 Also, that is why the below code works: 
-```
+```c++
 int i;
 i = 10;
 ```
@@ -40,7 +40,7 @@ This writing will go over two types of references: lvalue reference and rvalue r
 >**lvalue reference is a reference to a lvalue (existing object that's present in the memory of the program)**
 
 lvalue references are created using the `&` operator. For example,
-```
+```c++
 int i = 0;
 int& ref = i;
 ```
@@ -49,7 +49,7 @@ int& ref = i;
 When creating lvalue references, the assignment operator expects a lvalue on the right side. That's why this code `int& ref = 0;` will not compile.
 
 We get the error:
-```
+```c++
 error: cannot bind non-const lvalue reference of type 'int&' to an rvalue of type 'int'
 ```
 In summary, everything that's defined (have memory address in program memory) is a lvalue. You can assume that everything that has a name is a lvalue.
@@ -57,7 +57,7 @@ In summary, everything that's defined (have memory address in program memory) is
 ### What is rvalue?
 rvalue is the opposite of lvalue. They are expressions and temporary values that don't have location in the memory.
 
-If you recall taht everything that's defined and has a name is a lvalue, then anything that doesn't have a name is a rvalue.
+If you recall that everything that's defined and has a name is a lvalue, then anything that doesn't have a name is a rvalue.
 
 ### Conversion between rvalue and lvalue
 

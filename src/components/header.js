@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const styles = theme => ({
   root: {
@@ -112,7 +113,7 @@ class PrimarySearchAppBar extends React.Component
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         open={isMobileMenuOpen}
         onClose={this.handleMobileMenuClose} >
-          <LinkMenuItem to="/about" title="About" icon='<Face/>'/>
+          <LinkMenuItem to="/about" title="About"/>
           <LinkMenuItem to="/projects" title="Projects"/>
           <LinkMenuItem to="/blog" title="Blog"/>
       </Menu>
@@ -125,11 +126,27 @@ class PrimarySearchAppBar extends React.Component
             <Link to="/" title="Go to Home" style={{textDecoration:'none', color:'#FFF'}}><div class="name">Michael Ganzorig</div></Link>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-                <NavBarLink to="/about" title="About"/>
-                <NavBarLink to="/projects" title="Projects"/>
-                <NavBarLink to="/blog" title="Blog"/>
+              <Link
+                to='/'
+                style={{
+                  fontSize: '22px',textDecoration: 'none',
+                  color: 'rgba(255,255,255,0.75)',marginRight: '20px'}}>
+                  <SvgIcon>
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </SvgIcon>
+              </Link>
+              <NavBarLink to="/about" title="About"/>
+              <NavBarLink to="/projects" title="Projects"/>
+              <NavBarLink to="/blog" title="Blog"/>
             </div>
             <div className={classes.sectionMobile}>
+              <IconButton color="inherit">
+                <Link to='/' style={{color: 'rgba(255,255,255,1)'}}>
+                    <SvgIcon>
+                      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </SvgIcon>
+                </Link>
+              </IconButton>
               <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
                 <MenuIcon />
               </IconButton>
