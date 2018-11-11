@@ -17,7 +17,7 @@ const activeProjects = [
   {
     title: "Quiz Helper",
     image: "/",
-    description: "Coding a web crawler that finds answers to my quiz questions",
+    description: "A web scraper that finds answers to quiz questions",
     link: "https://github.com/manlaig/quiz_answer_finder",
     more: "https://github.com/manlaig/quiz_answer_finder"
   },
