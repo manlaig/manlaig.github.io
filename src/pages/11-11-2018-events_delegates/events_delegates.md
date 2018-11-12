@@ -42,6 +42,7 @@ I mentioned that delegates store functions, so the `parameters` of a delegate me
 **The `returnType` tells what the functions stored in a delegate must return**.
 
 Here's an example of a delegate in C#:
+
 ```csharp
 class MainClass
 {
@@ -86,7 +87,7 @@ I think of events as being wrapper classes of delegates. They are capable of doi
 
 Now that we have a delegate, we can declare an event.
 
-Here's the syntax for events.
+Here's the syntax for declaring events:
 
 ```csharp
 event delegateName name;
@@ -94,4 +95,54 @@ event delegateName name;
 
 `delegateName` is the name of the declared delegate, `Del` in our previous code.
 
-> **Still writing**
+Using the delegate we declared before, events can be added like this:
+
+```csharp
+class Events
+{
+  public delegate void Del();
+  public static event Del e;
+  
+  static void trigger()
+  {
+    if(e != null)
+      e();
+  }
+}
+```
+
+`trigger()` is for triggering the event, this is because **outside the class we can only attach and remove listeners to an event**. Calling the event can only be done in the class the event is defined.
+
+To use this event in a different class, we need a function that matches the delegate type. For example, 
+
+```csharp
+class MainClass
+{
+  static void func() { }
+
+  public static void Main (string[] args)
+  {
+    Events.e += func; // attaching to event
+    Events.trigger(); // triggering event
+    Events.e -= func; // removing from event
+  }
+}
+```
+
+**The compiler only allows attaching and removing operations when events are used in different classes.**
+
+Creating and using events like this allows us to notify all listeners when event is invoked.
+
+You can probably already see the benefits of using this design. We can have events, such as `playerDead`, `playerMoved`, `gameOver`, `gameStarted`, and so on. You can attach a function that does displays the game over text to the `playerDead` event and it will be called when the event is invoked.
+
+## Delegates vs Events
+
+If you noticed, delegates and events can do the same thing. Both can hold functions and call them when it is invoked.
+
+As I said earlier, I think of events as wrapper classes of delegates. 
+
+This is because **delegates have a weakness when it comes to making a notification system.**
+
+If you have a public delegate, then you can change its properties in any class. Like setting it to `null`. This is a serious issue. So, delegates cannot be used to create a notification system because of this.
+
+On the other hand, events solve this problem of delegates. You can only add and remove functions from events in outside classes. 
