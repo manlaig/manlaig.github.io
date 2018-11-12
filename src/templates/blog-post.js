@@ -1,7 +1,7 @@
 import React from "react"
 import Helmet from "react-helmet"
 import Layout from '../components/layout'
-import '../components/layout.css'
+import '../components/blog.css'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
@@ -14,6 +14,7 @@ export default function Template({
       <div>
         <h1>{post.frontmatter.title}</h1>
         <div
+          style={{letterSpacing:"0.2px"}}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </div>
