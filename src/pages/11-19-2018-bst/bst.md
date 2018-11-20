@@ -11,7 +11,7 @@ Binary Tree is a tree where each node of the tree has up to 2 nodes, left and ri
 
 Thinking of BSTs like the image below is very helpful.
 
-<img src="/static/images/bst.png" width="40%" height="50%">.
+<img src="/static/images/bst.png" width="40%" height="50%">
 
 In this writing, I will implement a BST in C++ that looks identical to the image above.
 
