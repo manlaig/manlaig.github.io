@@ -71,7 +71,7 @@ def getNewPixelValue(im, pixel_y, pixel_x, channel, kernel):
                 continue
             if (pixel_x + j < im.shape[1] - 1
                 and pixel_y + i < im.shape[0] - 1):
-               pixel_val += im[pixel_y + i][pixel_x + j][channel] * kernel[i + offset][j + offset]
+               pixel_val += im[pixel_y+i][pixel_x+j][channel] * kernel[i+offset][j+offset]
     return max(pixel_val, 0)
 ```
 
