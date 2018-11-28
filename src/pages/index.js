@@ -44,7 +44,7 @@ export default function Blog({ data })
           </Button>
         </Link>
       </Grid>
-      <h1 style={{marginTop:30}}>Projects in progress</h1>
+      <h1 style={{marginTop:20}}>Projects in progress</h1>
       <Grid container justify="center" spacing="40">
         {activeProjects.map(proj => { 
           return (<ProjectCard showImage={false}
@@ -52,6 +52,13 @@ export default function Blog({ data })
                   description={proj.description}
                   link={proj.link} more={proj.more}/>);
         })}
+      </Grid>
+      <Grid container justify="center">
+        <Link to="/projects" style={{textDecoration:'none'}} title="Go to Projects">
+          <Button variant="contained" size="large">
+            Other projects
+          </Button>
+        </Link>
       </Grid>
     </Layout>
   );
