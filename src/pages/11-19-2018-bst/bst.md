@@ -7,13 +7,13 @@ excerpt: "Binary Search Trees are very interesting data structures. It's a tree 
 
 Binary Tree is a tree where each node of the tree has up to 2 nodes, left and right. The difference between a binary tree and a binary search tree is how the nodes in a binary search tree is added.
 
->In a binary search tree (BST), the **left** node's value is **smaller or equal** to the current node's value while the **right** node's value is **bigger**.
+>In a binary search tree (BST), the **left** node's value is **smaller** than the current node's value while the **right** node's value is **bigger or equal to**.
 
-Thinking of BSTs like the image below is very helpful.
+So, the structure of a BST will look like this:
 
 <img src="/static/images/bst.png" width="40%" height="50%">
 
-In this writing, I will implement a BST in C++ that looks identical to the image above.
+Let's implement a BST in C++ that looks identical to the image above.
 
 First, we will define a node of our BST,
 
@@ -31,9 +31,11 @@ struct node
 };
 ```
 
-Our `node` data structure has an integer value and left and right pointers. This is because each node will contain a value and also 2 pointers that points to other nodes somewhere in memory.
+Our `node` data structure has an integer value and left and right pointers. That means each node will contain 2 pointers that points to other nodes somewhere in memory.
 
-Our tree will consist of nodes, right now we have the node defined. Now, we need a function that connects nodes of our tree. This function will get a value and add a new node to our tree with that value.
+Now that `node` is defined, we need an `add` function that adds nodes to our tree. The `add` function starts from the root of the tree and compares the current node's value to our value parameter. If the value of the current node is bigger, then it visits the left child, and vice versa. It does this until the current node is `null`.
+
+The `add` function can be implemented with loops or with recursion. I personally think recursive solutions are more fun than loops, so here's the implementation done with recursion.
 
 ```cpp
 void add(node*& root, int val)
@@ -50,15 +52,13 @@ void add(node*& root, int val)
 }
 ```
 
-This function traverses through the tree to find the correct spot for the value and creates a new node when it reaches the correct spot.
+The header of this function might look weird, the data type of root is `node*&`. What it's doing is getting a pointer to the root as a reference. By doing this, we can directly change the pointers of our tree. If we don't do this, `root` will not be changed when the function returns.
 
-The header of this function might look weird, the data type of root is `node*&`. What it's doing is **getting a pointer to the root as a reference.** If we don't do this, `root` will not be changed when the function returns.
+Different ways of accomplishing the same thing include: getting a double pointer to the root or returning the updated root from the function.
 
-Another way to make it work is to change the header of `add` to accept root as `node**`, but then we need to dereference root.
+At this point, we can build a BST using our `add` function. But, we need a function to display the tree. Some ways to traverse a BST are inorder, preorder, postorder, breadth-first, and depth-first traversals. We will implement inorder traversal, which will display the values in an ascending order.
 
-At this point, we can build a BST using our `add` function. But, we need a function to display the tree. Some ways to traverse a BST include: inorder, preorder, postorder, breadth-first, and depth-first traversals. We will implement inorder traversal, which will display the values in an ascending order.
-
-Inorder traversal first prints the value of the left node, then the value of the current node, finally the value of the right node.
+Inorder traversal first visits the left-most node of the tree, then the parent of that node, and finally the right node of that parent. It prints the value of each node it visits.
 
 ![](/static/images/inOrderTraversal.gif?raw=true "Binary Search Tree")
 
