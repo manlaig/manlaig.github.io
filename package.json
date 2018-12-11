@@ -4,18 +4,18 @@
   "version": "1.0.0",
   "author": "Michael Ganzorig <manlai1025@gmail.com>",
   "dependencies": {
-    "@material-ui/core": "^3.4.0",
+    "@material-ui/core": "^3.6.2",
     "@material-ui/icons": "^3.0.1",
     "@material/card": "^0.40.1",
-    "gatsby": "^2.0.40",
-    "gatsby-plugin-catch-links": "^2.0.6",
-    "gatsby-plugin-manifest": "^2.0.7",
-    "gatsby-plugin-offline": "^2.0.12",
-    "gatsby-plugin-react-helmet": "^3.0.1",
-    "gatsby-source-filesystem": "^2.0.7",
-    "gatsby-transformer-remark": "^2.1.11",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "gatsby": "^2.0.64",
+    "gatsby-plugin-catch-links": "^2.0.9",
+    "gatsby-plugin-manifest": "^2.0.11",
+    "gatsby-plugin-offline": "^2.0.19",
+    "gatsby-plugin-react-helmet": "^3.0.4",
+    "gatsby-source-filesystem": "^2.0.11",
+    "gatsby-transformer-remark": "^2.1.15",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "prettier": "^1.14.2"
+    "prettier": "^1.15.3"
   },
   "repository": {
     "type": "git",
