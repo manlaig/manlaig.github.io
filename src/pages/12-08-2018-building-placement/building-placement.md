@@ -1,11 +1,11 @@
 ---
 path: "/building-placement"
 date: "2018-12-08T20:13:43.962Z"
-title: "Grid-based object placement in Unity"
+title: "Dynamic grid-based object placement"
 excerpt: "In RTS games, when you place an object, it shows you where you can place it and where you cannot. In some games, like Starcraft, they have a grid that shows the collisions. This writing will go over on implementing a similar object placement."
 ---
 
-Placing object while checking collisions can done simply with a raycast, but RTS games have a grid under the object which shows whether it can be placed at that spot.
+In Unity, placing object while checking collisions can done simply with a raycast, but RTS games have a grid under the object which shows whether it can be placed at that spot or not.
 
 <img src="/static/images/example-building-place.jpg" width="400px" height="300px">
 
