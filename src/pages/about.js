@@ -14,7 +14,7 @@ const About = () => (
         <p style={style}>I love to <span style={bold}>build</span> software and <span style={bold}>learn</span> about technology.</p>
         <p style={style}>I believe the best way to learn is to teach someone.
         So, I <Link to="/blog">write</Link> about what I'm learning and share what I'm <Link to="/projects" target="_blank">building</Link> here.</p>
-        <p style={style}>Besides coding, my other hobbies are reading, playing basketball, and building circuits.</p>
+        <p style={style}>Besides coding, my other hobbies are reading books and playing basketball.</p>
         <div style={style}>
             <IconButton color="primary" href="https://github.com/manlaig" target="_blank">            
                 <SvgIcon>

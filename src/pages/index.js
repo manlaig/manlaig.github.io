@@ -8,18 +8,11 @@ import { Link } from 'gatsby'
 
 const activeProjects = [
   {
-    title: "Pong AI",
-    image: "/static/images/pong-bots.gif",
-    description: "Building a neural network to play Pong at an expert level",
-    link: "https://github.com/manlaig/pong_bots",
-    more: "https://manlaig.github.io/pong_bots"
-  },
-  {
-    title: "Quiz Helper",
+    title: "Snow Wars",
     image: "/",
-    description: "A web scraper that finds answers to quiz questions",
-    link: "https://github.com/manlaig/quiz_answer_finder",
-    more: "https://github.com/manlaig/quiz_answer_finder"
+    description: "RTS game in Unity",
+    link: "",
+    more: ""
   },
 ]
 

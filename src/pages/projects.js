@@ -12,20 +12,6 @@ import IconButton from '@material-ui/core/IconButton';
 
 export const projects = [
   {
-    title: "Survival Rush",
-    image: "/static/images/survival-rush.gif",
-    description: "A fun survival game for iOS and Android",
-    link: "https://github.com/manlaig/survival_rush",
-    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush"
-  },
-  {
-    title: "Pong AI",
-    image: "/static/images/pong-bots.gif",
-    description: "A Deep Neural Network that plays Pong",
-    link: "https://github.com/manlaig/pong_bots",
-    more: "https://manlaig.github.io/pong_bots"
-  },
-  {
     title: "AR Draw",
     image: "/static/images/ar-draw.gif",
     description: "Persistent Augmented Reality drawing app",
@@ -38,6 +24,20 @@ export const projects = [
     description: "Real-time chess and messaging app on the web",
     link: "https://github.com/manlaig/LiveChess",
     more: "http://chess-manlaig.herokuapp.com/"
+  },
+  {
+    title: "Pong AI",
+    image: "/static/images/pong-bots.gif",
+    description: "A Deep Neural Network that plays Pong",
+    link: "https://github.com/manlaig/pong_bots",
+    more: "https://manlaig.github.io/pong_bots"
+  },
+  {
+    title: "Survival Rush",
+    image: "/static/images/survival-rush.gif",
+    description: "A fun survival game for iOS and Android",
+    link: "https://github.com/manlaig/survival_rush",
+    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush"
   },
   {
     title: "Weather App",
