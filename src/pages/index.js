@@ -14,6 +14,13 @@ const activeProjects = [
     link: "",
     more: ""
   },
+  {
+    title: "Sort Visualizer",
+    image: "/",
+    description: "Visualizing sort algorithms in Swing",
+    link: "https://github.com/manlaig/sort_visualizer",
+    more: "https://github.com/manlaig/sort_visualizer"
+  },
 ]
 
 export default function Blog({ data })
