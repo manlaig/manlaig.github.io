@@ -42,9 +42,16 @@ export const projects = [
   {
     title: "Weather App",
     image: "/static/images/weather-app.png",
-    description: "Current weather data displayer web app",
+    description: "Displaying current weather data of cities",
     link: "https://github.com/manlaig/weather_forecast",
     more: "http://weather-manlaig.herokuapp.com"
+  },
+  {
+    title: "Sort Visualizer",
+    image: "/static/images/merge_sort.gif",
+    description: "Visualizing sorting algorithms",
+    link: "https://github.com/manlaig/sort_visualizer",
+    more: "http://manlai.me/sort_visualizer/"
   },
 ];
 
