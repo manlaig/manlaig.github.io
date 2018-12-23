@@ -23,7 +23,8 @@ export const projects = [
     image: "/static/images/chess-app.png",
     description: "Real-time chess and messaging app on the web",
     link: "https://github.com/manlaig/LiveChess",
-    more: "http://chess-manlaig.herokuapp.com/"
+    more: "http://chess-manlaig.herokuapp.com/",
+    moreTitle: "demo",
   },
   {
     title: "Pong AI",
@@ -37,14 +38,8 @@ export const projects = [
     image: "/static/images/survival-rush.gif",
     description: "A fun survival game for iOS and Android",
     link: "https://github.com/manlaig/survival_rush",
-    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush"
-  },
-  {
-    title: "Weather App",
-    image: "/static/images/weather-app.png",
-    description: "Displaying current weather data",
-    link: "https://github.com/manlaig/weather_forecast",
-    more: "http://weather-manlaig.herokuapp.com"
+    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush",
+    moreTitle: "Play Store",
   },
   {
     title: "Sort Visualizer",
@@ -52,6 +47,14 @@ export const projects = [
     description: "Visualizing sorting algorithms in Swing",
     link: "https://github.com/manlaig/sort_visualizer",
     more: "http://manlai.me/sort_visualizer/"
+  },
+  {
+    title: "Weather Reporter App",
+    image: "/static/images/weather-app.gif",
+    description: "Website displaying real-time weather",
+    link: "https://github.com/manlaig/weather_forecast",
+    more: "http://weather-manlaig.herokuapp.com",
+    moreTitle: "demo",
   },
 ];
 
@@ -62,7 +65,7 @@ export class ProjectCard extends Component
     return (
       <Grid item>
         <a href={this.props.more} target="_blank" rel="noopener noreferrer"
-           title="Learn More" style={{textDecoration:"none"}}>
+           style={{textDecoration:"none"}}>
           <Paper style={{ textAlign: 'center',
             maxWidth: 340,
             marginBottom: 20}} id="card-projects">
@@ -82,7 +85,7 @@ export class ProjectCard extends Component
                 </CardContent>
               <CardActions>
                   <Button size="small" color="primary" href={this.props.more} target="_blank">
-                    Learn More
+                    {this.props.moreTitle}
                   </Button>
                   <IconButton size="small" color="primary" href={this.props.link} target="_blank">
                     <SvgIcon>
@@ -110,7 +113,8 @@ export default class GridProjects extends Component
           return (<ProjectCard showImage={true}
                   title={proj.title} image={proj.image}
                   description={proj.description}
-                  link={proj.link} more={proj.more}/>);
+                  link={proj.link} more={proj.more}
+                  moreTitle={proj.moreTitle == null ? "Learn more" : proj.moreTitle}/>);
           })}
         </Grid>
       </Layout>

@@ -8,18 +8,18 @@ import { Link } from 'gatsby'
 
 const activeProjects = [
   {
-    title: "Snow Wars",
+    title: "Holiday Wars",
     image: "/",
-    description: "RTS game in Unity",
+    description: "Real-time strategy game in Unity",
     link: "",
     more: ""
   },
   {
-    title: "Sort Visualizer",
+    title: "Graph Visualizer",
     image: "/",
-    description: "Visualizing sort algorithms in Swing",
-    link: "https://github.com/manlaig/sort_visualizer",
-    more: "https://github.com/manlaig/sort_visualizer"
+    description: "Visualizing shortest-path and searching algorithms",
+    link: "",
+    more: ""
   },
 ]
 
