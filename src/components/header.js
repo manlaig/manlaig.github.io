@@ -137,7 +137,7 @@ class PrimarySearchAppBar extends React.Component
               </Link>
               <NavBarLink to="/about" title="About"/>
               <NavBarLink to="/projects" title="Projects"/>
-              <NavBarLink to="/blog" title="Blog"/>
+              <NavBarLink to="/blog" title="Writing"/>
             </div>
             <div className={classes.sectionMobile}>
               <IconButton color="inherit">
