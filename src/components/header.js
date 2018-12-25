@@ -115,7 +115,7 @@ class PrimarySearchAppBar extends React.Component
         onClose={this.handleMobileMenuClose} >
           <LinkMenuItem to="/about" title="About"/>
           <LinkMenuItem to="/projects" title="Projects"/>
-          <LinkMenuItem to="/blog" title="Blog"/>
+          <LinkMenuItem to="/blog" title="Writing"/>
       </Menu>
     );
 
