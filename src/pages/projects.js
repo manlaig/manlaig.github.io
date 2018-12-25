@@ -14,22 +14,22 @@ export const projects = [
   {
     title: "AR Draw",
     image: "/static/images/ar-draw.gif",
-    description: "Persistent Augmented Reality drawing app",
+    description: "Persistent Augmented Reality drawing app in Unity",
     link: "https://github.com/manlaig/ar_draw",
     more: "https://manlaig.github.io/AR_draw/"
   },
   {
-    title: "Multiplayer Chess",
-    image: "/static/images/chess-app.png",
-    description: "Real-time chess and messaging app on the web",
-    link: "https://github.com/manlaig/LiveChess",
-    more: "http://chess-manlaig.herokuapp.com/",
-    moreTitle: "demo",
+    title: "RTS Object Placement",
+    image: "/static/images/object_placement.gif",
+    description: "Dynamic grid-based building placement in Unity",
+    link: "https://github.com/manlaig/object_placement",
+    more: "https://manlai.me/building-placement",
+    moreTitle: "Read Post",
   },
   {
     title: "Pong AI",
     image: "/static/images/pong-bots.gif",
-    description: "A Deep Neural Network that plays Pong",
+    description: "Playing Pong with neural networks",
     link: "https://github.com/manlaig/pong_bots",
     more: "https://manlaig.github.io/pong_bots"
   },
@@ -49,9 +49,17 @@ export const projects = [
     more: "http://manlai.me/sort_visualizer/"
   },
   {
-    title: "Weather Reporter App",
+    title: "Multiplayer Chess",
+    image: "/static/images/chess-app.png",
+    description: "Real-time chess and messaging app",
+    link: "https://github.com/manlaig/LiveChess",
+    more: "http://chess-manlaig.herokuapp.com/",
+    moreTitle: "demo",
+  },
+  {
+    title: "Weather App",
     image: "/static/images/weather-app.gif",
-    description: "Website displaying real-time weather",
+    description: "Displaying real-time weather with React",
     link: "https://github.com/manlaig/weather_forecast",
     more: "http://weather-manlaig.herokuapp.com",
     moreTitle: "demo",
@@ -67,7 +75,7 @@ export class ProjectCard extends Component
         <a href={this.props.more} target="_blank" rel="noopener noreferrer"
            style={{textDecoration:"none"}}>
           <Paper style={{ textAlign: 'center',
-            maxWidth: 340,
+            width: 340,
             marginBottom: 20}} id="card-projects">
               {this.props.showImage && <CardMedia style = {{ height: 0,
                 paddingTop: '56%',

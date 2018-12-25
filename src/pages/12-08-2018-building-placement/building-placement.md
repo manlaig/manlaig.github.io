@@ -154,3 +154,5 @@ The `FillRectWithTiles` loops through the rectangle representing the area of the
 The finished project can be found [here](https://github.com/manlaig/object_placement)
 
 <img src="/static/images/desert.gif" width="400px" height="400px">
+
+<img src="https://i.imgflip.com/2prua5.gif" title="made at imgflip.com"/>

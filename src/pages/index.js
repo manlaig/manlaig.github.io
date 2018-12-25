@@ -11,15 +11,6 @@ const activeProjects = [
     title: "Holiday Wars",
     image: "/",
     description: "Real-time strategy game in Unity",
-    link: "",
-    more: ""
-  },
-  {
-    title: "Graph Visualizer",
-    image: "/",
-    description: "Visualizing shortest-path and searching algorithms",
-    link: "",
-    more: ""
   },
 ]
 
