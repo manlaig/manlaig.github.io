@@ -12,6 +12,12 @@ const activeProjects = [
     image: "/",
     description: "Real-time strategy game in Unity",
   },
+  {
+    title: "Unity Basic Multiplayer",
+    image: "/",
+    description: "Fast-Paced UDP Client-Server implementation",
+    link: "https://github.com/manlaig/basic_multiplayer_unity"
+  },
 ]
 
 export default function Blog({ data })

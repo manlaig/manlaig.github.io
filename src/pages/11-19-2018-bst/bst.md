@@ -62,7 +62,7 @@ Inorder traversal first visits the left-most node of the tree, then the parent o
 
 ![](/static/images/inOrderTraversal.gif?raw=true "Binary Search Tree")
 
-Implementation of an inorder traversal will look this:
+Implementation of an inorder traversal will look like this:
 
 ```cpp
 void printInOrder(node* root)
