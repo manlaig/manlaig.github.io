@@ -45,7 +45,7 @@ void add(node*& root, int val)
     root = new node(val);
     return;
   }
-  if(val > root->val)
+  if(val >= root->val)
     add(root->right, val);
   else
     add(root->left, val);
@@ -79,7 +79,7 @@ Now, we have everything we need to build and traverse a BST.
 
 Here's an example of a BST using our `add` and `printInOrder` functions.
 
-```
+```cpp
 node* root = 0;
 add(root, 10);
 add(root, 15);
@@ -91,3 +91,51 @@ printInOrder(root);
 >Output: `8 10 15 18`
 
 As we can see, the `add` function adds new nodes to the tree and `printInOrder` function traverses the tree starting from the left-most node.
+
+## Height of tree
+
+Every tree has a height. The tree in the previous image has a height of 4. The *deeper* the tree grows, the height increases. The algorithm for finding the height can be implemented recursively or with a loop. I prefer the recursive algorithm, which uses divide and conquer.
+
+```cpp
+int getHeight(node* head)
+{
+  if(!head)
+    return 0;
+
+  /* get height of left and right nodes */
+  int left = getHeight(head->left);
+  int right = getHeight(head->right);
+
+  /* get the maximum of the left and right nodes and add to it height of current node */
+  return max(left, right) + 1;
+}
+```
+
+The runtime of this algorithm is `O(n)` (n = number of nodes in tree), there are n subproblems and each subproblem takes a constant time (ignore recursive calls).
+
+## Searching
+
+Breadth First Search (BFS) and Depth First Search (DFS) are two of the essential tree searching algorithms. They differ in their way of traversing the tree, but their implementation is very similar. In fact, if you change the Queue of BFS to a Stack, then you get DFS.
+
+```cpp
+void BreadthFirstSearch(node* head)
+{
+  queue<node*> q;
+  q.push(head);
+  cout << "BFS: ";
+  /* since it's a tree and not a graph, a visited set is unnecessary */
+  while(!q.empty())
+  {
+    node* temp = q.front();
+    q.pop();
+    cout << temp->val << " ";
+    if(temp->left)
+      q.push(temp->left);
+    if(temp->right)
+      q.push(temp->right);
+  }
+  cout << endl;
+}
+```
+
+[Here](https://repl.it/@manlai1025/DFS-and-BFS-in-BST) is the complete code, which contains all the algorithms covered here.
