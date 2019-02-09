@@ -29,7 +29,7 @@ export const projects = [
   {
     title: "Pong AI",
     image: "/static/images/pong-bots.gif",
-    description: "Playing Pong with neural networks",
+    description: "Teaching neural networks to play Pong",
     link: "https://github.com/manlaig/pong_bots",
     more: "https://manlaig.github.io/pong_bots"
   },

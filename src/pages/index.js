@@ -8,14 +8,9 @@ import { Link } from 'gatsby'
 
 const activeProjects = [
   {
-    title: "Holiday Wars",
-    image: "/",
-    description: "Real-time strategy game in Unity",
-  },
-  {
     title: "Unity Basic Multiplayer",
     image: "/",
-    description: "Fast-Paced UDP Client-Server implementation",
+    description: "Networking API for Unity",
     link: "https://github.com/manlaig/basic_multiplayer_unity"
   },
 ]
