@@ -8,10 +8,10 @@ import { Link } from 'gatsby'
 
 const activeProjects = [
   {
-    title: "Unity Basic Multiplayer",
+    title: "3D Graphics",
     image: "/",
-    description: "Networking API for Unity",
-    link: "https://github.com/manlaig/basic_multiplayer_unity"
+    description: "Implementing a 3D rendering engine while learning about computer graphics",
+    link: "https://github.com/manlaig/3d_graphics"
   },
 ]
 
