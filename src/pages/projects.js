@@ -12,6 +12,20 @@ import IconButton from '@material-ui/core/IconButton';
 
 export const projects = [
   {
+    title: "3D Graphics",
+    image: "/static/images/graphics.gif",
+    description: "Experimental 3D rendering engine in Java Swing",
+    link: "https://github.com/manlaig/3d_graphics",
+    more: "https://manlai.me/3d_graphics/"
+  },
+  {
+    title: "Game Networking API",
+    image: "/static/images/pong_2p.gif",
+    description: "Simple, message-based UDP networking API in C#",
+    link: "https://github.com/manlaig/basic_multiplayer_unity",
+    more: "https://manlai.me/basic_multiplayer_unity/"
+  },
+  {
     title: "AR Draw",
     image: "/static/images/ar-draw.gif",
     description: "Persistent Augmented Reality drawing app in Unity",
@@ -42,13 +56,6 @@ export const projects = [
     moreTitle: "Play Store",
   },
   {
-    title: "Sort Visualizer",
-    image: "/static/images/merge_sort.gif",
-    description: "Visualizing sorting algorithms in Swing",
-    link: "https://github.com/manlaig/sort_visualizer",
-    more: "http://manlai.me/sort_visualizer/"
-  },
-  {
     title: "Multiplayer Chess",
     image: "/static/images/chess-app.png",
     description: "Real-time chess and messaging app",
@@ -63,6 +70,20 @@ export const projects = [
     link: "https://github.com/manlaig/weather_forecast",
     more: "http://weather-manlaig.herokuapp.com",
     moreTitle: "demo",
+  },
+  {
+    title: "Sort Visualizer",
+    image: "/static/images/merge_sort.gif",
+    description: "Visualizing sorting algorithms in Swing",
+    link: "https://github.com/manlaig/sort_visualizer",
+    more: "http://manlai.me/sort_visualizer/"
+  },
+  {
+    title: "Maze",
+    image: "/static/images/maze.gif",
+    description: "Visualizing maze algorithms in Swing",
+    link: "https://github.com/manlaig/maze",
+    more: "https://manlai.me/maze/"
   },
 ];
 
