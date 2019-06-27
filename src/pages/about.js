@@ -9,8 +9,8 @@ const bold = {fontWeight:"bold"};
 
 const About = () => (
     <Layout>
-        <h1 style={style}>Hi, my name is Michael.</h1>
-        <p style={style}>I am a <span style={bold}>Computer Science student</span> at American River College.</p>
+        <h1 style={style}>Hi, my name is Michael Ganzorig.</h1>
+        <p style={style}>I am an <span style={bold}>Electrical Engineering and Computer Science</span> student at UC Berkeley.</p>
         <p style={style}>I love to <span style={bold}>build</span> software and <span style={bold}>learn</span> about technology.</p>
         <p style={style}>I believe the best way to learn is to teach someone.
         So, I <Link to="/blog">write</Link> about what I'm learning and share what I'm <Link to="/projects" target="_blank">building</Link> here.</p>
