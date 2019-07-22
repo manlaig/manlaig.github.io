@@ -85,6 +85,13 @@ export const projects = [
     link: "https://github.com/manlaig/maze",
     more: "https://manlai.me/maze/"
   },
+  {
+    title: "Graph Visualization",
+    image: "/static/images/graph_algorithms.gif",
+    description: "Implementing and visualizing popular graph algorithms in Java Swing",
+    link: "https://github.com/manlaig/graph_algorithms",
+    more: "https://manlai.me/graph_algorithms/"
+  },
 ];
 
 export class ProjectCard extends Component

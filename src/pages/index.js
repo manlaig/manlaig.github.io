@@ -9,9 +9,15 @@ import { Link } from 'gatsby'
 const activeProjects = [
   {
     title: "3D Graphics",
-    image: "/",
-    description: "Implementing a 3D rendering engine while learning about computer graphics",
+    image: "/static/images/graphics.gif",
+    description: "Learning about computer graphics by implementing basic graphics algorithms",
     link: "https://github.com/manlaig/3d_graphics"
+  },
+  {
+    title: "Graph Visualization",
+    image: "/static/images/graph_algorithms.gif",
+    description: "Implementing and visualizing popular graph algorithms in Java Swing",
+    link: "https://github.com/manlaig/graph_algorithms"
   },
 ]
 
@@ -39,7 +45,7 @@ export default function Blog({ data })
       <h1 style={{marginTop:20}}>Projects in progress</h1>
       <Grid container justify="center" spacing="40">
         {activeProjects.map(proj => { 
-          return (<ProjectCard showImage={false}
+          return (<ProjectCard showImage={true}
                   title={proj.title} image={proj.image}
                   description={proj.description}
                   link={proj.link} more={proj.more}/>);
