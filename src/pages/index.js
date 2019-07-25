@@ -26,7 +26,23 @@ export default function Blog({ data })
   const { edges: posts } = data.allMarkdownRemark
   return (
     <Layout>
-      <h1>Latest Post</h1>
+      <h1>Projects in progress</h1>
+      <Grid container justify="center" spacing="40">
+        {activeProjects.map(proj => { 
+          return (<ProjectCard showImage={true}
+                  title={proj.title} image={proj.image}
+                  description={proj.description}
+                  link={proj.link} more={proj.more}/>);
+        })}
+      </Grid>
+      <Grid container justify="center">
+        <Link to="/projects" style={{textDecoration:'none'}} title="Go to Projects">
+          <Button variant="contained" size="large">
+            Past projects
+          </Button>
+        </Link>
+      </Grid>
+      <h1 style={{marginTop:20}}>Latest Post</h1>
       {posts
           .filter(post => posts.indexOf(post) < 1)
           .map(({ node: post }) => {
@@ -39,22 +55,6 @@ export default function Blog({ data })
         <Link to="/blog" style={{textDecoration:'none'}} title="Go to Blog">
           <Button variant="contained" size="large">
             More posts
-          </Button>
-        </Link>
-      </Grid>
-      <h1 style={{marginTop:20}}>Projects in progress</h1>
-      <Grid container justify="center" spacing="40">
-        {activeProjects.map(proj => { 
-          return (<ProjectCard showImage={true}
-                  title={proj.title} image={proj.image}
-                  description={proj.description}
-                  link={proj.link} more={proj.more}/>);
-        })}
-      </Grid>
-      <Grid container justify="center">
-        <Link to="/projects" style={{textDecoration:'none'}} title="Go to Projects">
-          <Button variant="contained" size="large">
-            Other projects
           </Button>
         </Link>
       </Grid>
