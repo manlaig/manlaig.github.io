@@ -14,14 +14,14 @@ export const projects = [
   {
     title: "3D Graphics",
     image: "/static/images/graphics.gif",
-    description: "Experimental 3D rendering engine in Java Swing",
+    description: "Very, very simple rendering engine",
     link: "https://github.com/manlaig/3d_graphics",
     more: "https://manlai.me/3d_graphics/"
   },
   {
     title: "Game Networking API",
     image: "/static/images/pong_2p.gif",
-    description: "Simple, message-based UDP networking API in C#",
+    description: "Simple UDP networking API in C#",
     link: "https://github.com/manlaig/basic_multiplayer_unity",
     more: "https://manlai.me/basic_multiplayer_unity/"
   },
