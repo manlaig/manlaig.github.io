@@ -2,142 +2,12 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var stream = _interopDefault(require('stream'));
 var os = _interopDefault(require('os'));
 var path = _interopDefault(require('path'));
 var util = _interopDefault(require('util'));
 var module$1 = _interopDefault(require('module'));
 var fs = _interopDefault(require('fs'));
-
-function commonjsRequire () {
-	throw new Error('Dynamic requires are not currently supported by rollup-plugin-commonjs');
-}
-
-
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var bufferStream = createCommonjsModule(function (module) {
-  'use strict';
-
-  var PassThrough = stream.PassThrough;
-
-  module.exports = function (opts) {
-    opts = Object.assign({}, opts);
-    var array = opts.array;
-    var encoding = opts.encoding;
-    var buffer = encoding === 'buffer';
-    var objectMode = false;
-
-    if (array) {
-      objectMode = !(encoding || buffer);
-    } else {
-      encoding = encoding || 'utf8';
-    }
-
-    if (buffer) {
-      encoding = null;
-    }
-
-    var len = 0;
-    var ret = [];
-    var stream$$1 = new PassThrough({
-      objectMode
-    });
-
-    if (encoding) {
-      stream$$1.setEncoding(encoding);
-    }
-
-    stream$$1.on('data', function (chunk) {
-      ret.push(chunk);
-
-      if (objectMode) {
-        len = ret.length;
-      } else {
-        len += chunk.length;
-      }
-    });
-
-    stream$$1.getBufferedValue = function () {
-      if (array) {
-        return ret;
-      }
-
-      return buffer ? Buffer.concat(ret, len) : ret.join('');
-    };
-
-    stream$$1.getBufferedLength = function () {
-      return len;
-    };
-
-    return stream$$1;
-  };
-});
-
-function getStream(inputStream, opts) {
-  if (!inputStream) {
-    return Promise.reject(new Error('Expected a stream'));
-  }
-
-  opts = Object.assign({
-    maxBuffer: Infinity
-  }, opts);
-  var maxBuffer = opts.maxBuffer;
-  var stream$$1;
-  var clean;
-  var p = new Promise(function (resolve, reject) {
-    var error = function error(err) {
-      if (err) {
-        // null check
-        err.bufferedData = stream$$1.getBufferedValue();
-      }
-
-      reject(err);
-    };
-
-    stream$$1 = bufferStream(opts);
-    inputStream.once('error', error);
-    inputStream.pipe(stream$$1);
-    stream$$1.on('data', function () {
-      if (stream$$1.getBufferedLength() > maxBuffer) {
-        reject(new Error('maxBuffer exceeded'));
-      }
-    });
-    stream$$1.once('error', error);
-    stream$$1.on('end', resolve);
-
-    clean = function clean() {
-      // some streams doesn't implement the `stream.Readable` interface correctly
-      if (inputStream.unpipe) {
-        inputStream.unpipe(stream$$1);
-      }
-    };
-  });
-  p.then(clean, clean);
-  return p.then(function () {
-    return stream$$1.getBufferedValue();
-  });
-}
-
-var getStream_1 = getStream;
-
-var buffer = function buffer(stream$$1, opts) {
-  return getStream(stream$$1, Object.assign({}, opts, {
-    encoding: 'buffer'
-  }));
-};
-
-var array = function array(stream$$1, opts) {
-  return getStream(stream$$1, Object.assign({}, opts, {
-    array: true
-  }));
-};
-
-getStream_1.buffer = buffer;
-getStream_1.array = array;
+var stream = _interopDefault(require('stream'));
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -344,6 +214,16 @@ function _optionalCallableProperty(obj, name) {
   }
 
   return value;
+}
+
+function commonjsRequire () {
+	throw new Error('Dynamic requires are not currently supported by rollup-plugin-commonjs');
+}
+
+
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
 var isArrayish = function isArrayish(obj) {
@@ -1802,6 +1682,10 @@ var PATTERN_FLOW_INDICATORS = /[,\[\]\{\}]/;
 var PATTERN_TAG_HANDLE = /^(?:!|!!|![a-z\-]+!)$/i;
 var PATTERN_TAG_URI = /^(?:!|[^,\[\]\{\}])(?:%[0-9a-f]{2}|[0-9a-z\-#;\/\?:@&=\+\$,_\.!~\*'\(\)\[\]])*$/i;
 
+function _class(obj) {
+  return Object.prototype.toString.call(obj);
+}
+
 function is_EOL(c) {
   return c === 0x0A
   /* LF */
@@ -2105,7 +1989,31 @@ function mergeMappings(state, destination, source, overridableKeys) {
 }
 
 function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode, startLine, startPos) {
-  var index, quantity;
+  var index, quantity; // The output is a plain object here, so keys can only be strings.
+  // We need to convert keyNode to a string, but doing so can hang the process
+  // (deeply nested arrays that explode exponentially using aliases).
+
+  if (Array.isArray(keyNode)) {
+    keyNode = Array.prototype.slice.call(keyNode);
+
+    for (index = 0, quantity = keyNode.length; index < quantity; index += 1) {
+      if (Array.isArray(keyNode[index])) {
+        throwError(state, 'nested arrays are not supported inside keys');
+      }
+
+      if (typeof keyNode === 'object' && _class(keyNode[index]) === '[object Object]') {
+        keyNode[index] = '[object Object]';
+      }
+    }
+  } // Avoid code execution in load() via toString property
+  // (still use its own toString for arrays, timestamps,
+  // and whatever user schema extensions happen to have @@toStringTag)
+
+
+  if (typeof keyNode === 'object' && _class(keyNode) === '[object Object]') {
+    keyNode = '[object Object]';
+  }
+
   keyNode = String(keyNode);
 
   if (_result === null) {
@@ -3600,6 +3508,7 @@ function encodeHex(character) {
 function State$1(options) {
   this.schema = options['schema'] || default_full;
   this.indent = Math.max(1, options['indent'] || 2);
+  this.noArrayIndent = options['noArrayIndent'] || false;
   this.skipInvalid = options['skipInvalid'] || false;
   this.flowLevel = common.isNothing(options['flowLevel']) ? -1 : options['flowLevel'];
   this.styleMap = compileStyleMap(this.schema, options['styles'] || null);
@@ -4200,14 +4109,16 @@ function writeNode(state, level, object, block, compact, iskey) {
         }
       }
     } else if (type === '[object Array]') {
+      var arrayLevel = state.noArrayIndent && level > 0 ? level - 1 : level;
+
       if (block && state.dump.length !== 0) {
-        writeBlockSequence(state, level, state.dump, compact);
+        writeBlockSequence(state, arrayLevel, state.dump, compact);
 
         if (duplicate) {
           state.dump = '&ref_' + duplicateIndex + state.dump;
         }
       } else {
-        writeFlowSequence(state, level, state.dump);
+        writeFlowSequence(state, arrayLevel, state.dump);
 
         if (duplicate) {
           state.dump = '&ref_' + duplicateIndex + ' ' + state.dump;
@@ -5096,11 +5007,351 @@ var findParentDir$1 = createCommonjsModule(function (module, exports) {
   };
 });
 
+var bufferStream = createCommonjsModule(function (module) {
+  'use strict';
+
+  var PassThrough = stream.PassThrough;
+
+  module.exports = function (opts) {
+    opts = Object.assign({}, opts);
+    var array = opts.array;
+    var encoding = opts.encoding;
+    var buffer = encoding === 'buffer';
+    var objectMode = false;
+
+    if (array) {
+      objectMode = !(encoding || buffer);
+    } else {
+      encoding = encoding || 'utf8';
+    }
+
+    if (buffer) {
+      encoding = null;
+    }
+
+    var len = 0;
+    var ret = [];
+    var stream$$1 = new PassThrough({
+      objectMode
+    });
+
+    if (encoding) {
+      stream$$1.setEncoding(encoding);
+    }
+
+    stream$$1.on('data', function (chunk) {
+      ret.push(chunk);
+
+      if (objectMode) {
+        len = ret.length;
+      } else {
+        len += chunk.length;
+      }
+    });
+
+    stream$$1.getBufferedValue = function () {
+      if (array) {
+        return ret;
+      }
+
+      return buffer ? Buffer.concat(ret, len) : ret.join('');
+    };
+
+    stream$$1.getBufferedLength = function () {
+      return len;
+    };
+
+    return stream$$1;
+  };
+});
+
+function getStream(inputStream, opts) {
+  if (!inputStream) {
+    return Promise.reject(new Error('Expected a stream'));
+  }
+
+  opts = Object.assign({
+    maxBuffer: Infinity
+  }, opts);
+  var maxBuffer = opts.maxBuffer;
+  var stream$$1;
+  var clean;
+  var p = new Promise(function (resolve, reject) {
+    var error = function error(err) {
+      if (err) {
+        // null check
+        err.bufferedData = stream$$1.getBufferedValue();
+      }
+
+      reject(err);
+    };
+
+    stream$$1 = bufferStream(opts);
+    inputStream.once('error', error);
+    inputStream.pipe(stream$$1);
+    stream$$1.on('data', function () {
+      if (stream$$1.getBufferedLength() > maxBuffer) {
+        reject(new Error('maxBuffer exceeded'));
+      }
+    });
+    stream$$1.once('error', error);
+    stream$$1.on('end', resolve);
+
+    clean = function clean() {
+      // some streams doesn't implement the `stream.Readable` interface correctly
+      if (inputStream.unpipe) {
+        inputStream.unpipe(stream$$1);
+      }
+    };
+  });
+  p.then(clean, clean);
+  return p.then(function () {
+    return stream$$1.getBufferedValue();
+  });
+}
+
+var getStream_1 = getStream;
+
+var buffer = function buffer(stream$$1, opts) {
+  return getStream(stream$$1, Object.assign({}, opts, {
+    encoding: 'buffer'
+  }));
+};
+
+var array = function array(stream$$1, opts) {
+  return getStream(stream$$1, Object.assign({}, opts, {
+    array: true
+  }));
+};
+
+getStream_1.buffer = buffer;
+getStream_1.array = array;
+
+var vendors = [{
+  "name": "AppVeyor",
+  "constant": "APPVEYOR",
+  "env": "APPVEYOR",
+  "pr": "APPVEYOR_PULL_REQUEST_NUMBER"
+}, {
+  "name": "Azure Pipelines",
+  "constant": "AZURE_PIPELINES",
+  "env": "SYSTEM_TEAMFOUNDATIONCOLLECTIONURI",
+  "pr": "SYSTEM_PULLREQUEST_PULLREQUESTID"
+}, {
+  "name": "Bamboo",
+  "constant": "BAMBOO",
+  "env": "bamboo_planKey"
+}, {
+  "name": "Bitbucket Pipelines",
+  "constant": "BITBUCKET",
+  "env": "BITBUCKET_COMMIT",
+  "pr": "BITBUCKET_PR_ID"
+}, {
+  "name": "Bitrise",
+  "constant": "BITRISE",
+  "env": "BITRISE_IO",
+  "pr": "BITRISE_PULL_REQUEST"
+}, {
+  "name": "Buddy",
+  "constant": "BUDDY",
+  "env": "BUDDY_WORKSPACE_ID",
+  "pr": "BUDDY_EXECUTION_PULL_REQUEST_ID"
+}, {
+  "name": "Buildkite",
+  "constant": "BUILDKITE",
+  "env": "BUILDKITE",
+  "pr": {
+    "env": "BUILDKITE_PULL_REQUEST",
+    "ne": "false"
+  }
+}, {
+  "name": "CircleCI",
+  "constant": "CIRCLE",
+  "env": "CIRCLECI",
+  "pr": "CIRCLE_PULL_REQUEST"
+}, {
+  "name": "Cirrus CI",
+  "constant": "CIRRUS",
+  "env": "CIRRUS_CI",
+  "pr": "CIRRUS_PR"
+}, {
+  "name": "AWS CodeBuild",
+  "constant": "CODEBUILD",
+  "env": "CODEBUILD_BUILD_ARN"
+}, {
+  "name": "Codeship",
+  "constant": "CODESHIP",
+  "env": {
+    "CI_NAME": "codeship"
+  }
+}, {
+  "name": "Drone",
+  "constant": "DRONE",
+  "env": "DRONE",
+  "pr": {
+    "DRONE_BUILD_EVENT": "pull_request"
+  }
+}, {
+  "name": "dsari",
+  "constant": "DSARI",
+  "env": "DSARI"
+}, {
+  "name": "GitLab CI",
+  "constant": "GITLAB",
+  "env": "GITLAB_CI"
+}, {
+  "name": "GoCD",
+  "constant": "GOCD",
+  "env": "GO_PIPELINE_LABEL"
+}, {
+  "name": "Hudson",
+  "constant": "HUDSON",
+  "env": "HUDSON_URL"
+}, {
+  "name": "Jenkins",
+  "constant": "JENKINS",
+  "env": ["JENKINS_URL", "BUILD_ID"],
+  "pr": {
+    "any": ["ghprbPullId", "CHANGE_ID"]
+  }
+}, {
+  "name": "Magnum CI",
+  "constant": "MAGNUM",
+  "env": "MAGNUM"
+}, {
+  "name": "Netlify CI",
+  "constant": "NETLIFY",
+  "env": "NETLIFY_BUILD_BASE",
+  "pr": {
+    "env": "PULL_REQUEST",
+    "ne": "false"
+  }
+}, {
+  "name": "Sail CI",
+  "constant": "SAIL",
+  "env": "SAILCI",
+  "pr": "SAIL_PULL_REQUEST_NUMBER"
+}, {
+  "name": "Semaphore",
+  "constant": "SEMAPHORE",
+  "env": "SEMAPHORE",
+  "pr": "PULL_REQUEST_NUMBER"
+}, {
+  "name": "Shippable",
+  "constant": "SHIPPABLE",
+  "env": "SHIPPABLE",
+  "pr": {
+    "IS_PULL_REQUEST": "true"
+  }
+}, {
+  "name": "Solano CI",
+  "constant": "SOLANO",
+  "env": "TDDIUM",
+  "pr": "TDDIUM_PR_ID"
+}, {
+  "name": "Strider CD",
+  "constant": "STRIDER",
+  "env": "STRIDER"
+}, {
+  "name": "TaskCluster",
+  "constant": "TASKCLUSTER",
+  "env": ["TASK_ID", "RUN_ID"]
+}, {
+  "name": "TeamCity",
+  "constant": "TEAMCITY",
+  "env": "TEAMCITY_VERSION"
+}, {
+  "name": "Travis CI",
+  "constant": "TRAVIS",
+  "env": "TRAVIS",
+  "pr": {
+    "env": "TRAVIS_PULL_REQUEST",
+    "ne": "false"
+  }
+}];
+
+var vendors$1 = Object.freeze({
+	default: vendors
+});
+
+var vendors$2 = ( vendors$1 && vendors ) || vendors$1;
+
+var ciInfo = createCommonjsModule(function (module, exports) {
+  'use strict';
+
+  var env = process.env; // Used for testing only
+
+  Object.defineProperty(exports, '_vendors', {
+    value: vendors$2.map(function (v) {
+      return v.constant;
+    })
+  });
+  exports.name = null;
+  exports.isPR = null;
+  vendors$2.forEach(function (vendor) {
+    var envs = Array.isArray(vendor.env) ? vendor.env : [vendor.env];
+    var isCI = envs.every(function (obj) {
+      return checkEnv(obj);
+    });
+    exports[vendor.constant] = isCI;
+
+    if (isCI) {
+      exports.name = vendor.name;
+
+      switch (typeof vendor.pr) {
+        case 'string':
+          // "pr": "CIRRUS_PR"
+          exports.isPR = !!env[vendor.pr];
+          break;
+
+        case 'object':
+          if ('env' in vendor.pr) {
+            // "pr": { "env": "BUILDKITE_PULL_REQUEST", "ne": "false" }
+            exports.isPR = vendor.pr.env in env && env[vendor.pr.env] !== vendor.pr.ne;
+          } else if ('any' in vendor.pr) {
+            // "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
+            exports.isPR = vendor.pr.any.some(function (key) {
+              return !!env[key];
+            });
+          } else {
+            // "pr": { "DRONE_BUILD_EVENT": "pull_request" }
+            exports.isPR = checkEnv(vendor.pr);
+          }
+
+          break;
+
+        default:
+          // PR detection not supported for this vendor
+          exports.isPR = null;
+      }
+    }
+  });
+  exports.isCI = !!(env.CI || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari
+  env.CONTINUOUS_INTEGRATION || // Travis CI, Cirrus CI
+  env.BUILD_NUMBER || // Jenkins, TeamCity
+  env.RUN_ID || // TaskCluster, dsari
+  exports.name || false);
+
+  function checkEnv(obj) {
+    if (typeof obj === 'string') return !!env[obj];
+    return Object.keys(obj).every(function (k) {
+      return env[k] === obj[k];
+    });
+  }
+});
+
+var isCi = ciInfo.isCI;
+
 var findParentDir = findParentDir$1.sync;
 var thirdParty = {
-  getStream: getStream_1,
   cosmiconfig: dist,
-  findParentDir
+  findParentDir,
+  getStream: getStream_1,
+  isCI:
+  /* istanbul ignore next */
+  function isCI() {
+    return isCi;
+  }
 };
 
 module.exports = thirdParty;

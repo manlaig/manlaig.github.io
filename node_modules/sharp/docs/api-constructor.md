@@ -9,11 +9,11 @@
      a String containing the path to an JPEG, PNG, WebP, GIF, SVG or TIFF image file.
      JPEG, PNG, WebP, GIF, SVG, TIFF or raw pixel image data can be streamed into the object when not present.
 -   `options` **[Object][3]?** if present, is an Object with optional attributes.
-    -   `options.failOnError` **[Boolean][4]** by default apply a "best effort"
-         to decode images, even if the data is corrupt or invalid. Set this flag to true
-         if you'd rather halt processing and raise an error when loading invalid images. (optional, default `false`)
+    -   `options.failOnError` **[Boolean][4]** by default halt processing and raise an error when loading invalid images.
+         Set this flag to `false` if you'd rather apply a "best effort" to decode images, even if the data is corrupt or invalid. (optional, default `true`)
     -   `options.density` **[Number][5]** number representing the DPI for vector images. (optional, default `72`)
-    -   `options.page` **[Number][5]** page number to extract for multi-page input (GIF, TIFF) (optional, default `0`)
+    -   `options.pages` **[Number][5]** number of pages to extract for multi-page input (GIF, TIFF, PDF), use -1 for all pages. (optional, default `1`)
+    -   `options.page` **[Number][5]** page number to start extracting from for multi-page input (GIF, TIFF, PDF), zero based. (optional, default `0`)
     -   `options.raw` **[Object][3]?** describes raw pixel input image data. See `raw()` for pixel ordering.
         -   `options.raw.width` **[Number][5]?** 
         -   `options.raw.height` **[Number][5]?** 
