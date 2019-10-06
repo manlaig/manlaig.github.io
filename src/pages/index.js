@@ -13,12 +13,6 @@ const activeProjects = [
     description: "Learning about computer graphics by implementing basic graphics algorithms",
     link: "https://github.com/manlaig/3d_graphics"
   },
-  {
-    title: "Graph Visualization",
-    image: "/static/images/graph_algorithms.gif",
-    description: "Implementing and visualizing popular graph algorithms in Java Swing",
-    link: "https://github.com/manlaig/graph_algorithms"
-  },
 ]
 
 export default function Blog({ data })

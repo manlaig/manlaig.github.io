@@ -12,18 +12,33 @@ import IconButton from '@material-ui/core/IconButton';
 
 export const projects = [
   {
-    title: "3D Graphics",
-    image: "/static/images/graphics.gif",
-    description: "Very, very simple rendering engine",
-    link: "https://github.com/manlaig/3d_graphics",
-    more: "https://manlai.me/3d_graphics/"
+    title: "Snow Wars",
+    image: "/static/images/snow_wars.gif",
+    description: "Real-time strategy game in Unity. Inspired by Starcraft",
+    link: "https://github.com/manlaig/snow_wars",
+    more: "https://github.com/manlaig/snow_wars"
+  },
+  {
+    title: "Survival Rush",
+    image: "/static/images/survival-rush.gif",
+    description: "A fun survival game for iOS and Android. Built in Unity",
+    link: "https://github.com/manlaig/survival_rush",
+    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush",
+    moreTitle: "Play Store",
   },
   {
     title: "Game Networking API",
     image: "/static/images/pong_2p.gif",
-    description: "Simple UDP networking API in C#",
+    description: "Simple UDP networking API for Unity",
     link: "https://github.com/manlaig/basic_multiplayer_unity",
     more: "https://manlai.me/basic_multiplayer_unity/"
+  },
+  {
+    title: "3D Graphics",
+    image: "/static/images/graphics.gif",
+    description: "Very simple rendering engine",
+    link: "https://github.com/manlaig/3d_graphics",
+    more: "https://manlai.me/3d_graphics/"
   },
   {
     title: "AR Draw",
@@ -39,21 +54,6 @@ export const projects = [
     link: "https://github.com/manlaig/object_placement",
     more: "https://manlai.me/building-placement",
     moreTitle: "Read Post",
-  },
-  {
-    title: "Pong AI",
-    image: "/static/images/pong-bots.gif",
-    description: "Teaching neural networks to play Pong",
-    link: "https://github.com/manlaig/pong_bots",
-    more: "https://manlaig.github.io/pong_bots"
-  },
-  {
-    title: "Survival Rush",
-    image: "/static/images/survival-rush.gif",
-    description: "A fun survival game for iOS and Android",
-    link: "https://github.com/manlaig/survival_rush",
-    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush",
-    moreTitle: "Play Store",
   },
   {
     title: "Multiplayer Chess",
@@ -72,6 +72,13 @@ export const projects = [
     moreTitle: "demo",
   },
   {
+    title: "Pong AI",
+    image: "/static/images/pong-bots.gif",
+    description: "Teaching neural networks to play Pong",
+    link: "https://github.com/manlaig/pong_bots",
+    more: "https://manlaig.github.io/pong_bots"
+  },
+  {
     title: "Sort Visualizer",
     image: "/static/images/merge_sort.gif",
     description: "Visualizing sorting algorithms in Swing",
@@ -81,7 +88,7 @@ export const projects = [
   {
     title: "Maze",
     image: "/static/images/maze.gif",
-    description: "Visualizing maze algorithms in Swing",
+    description: "Visualizing maze generation and solving algorithms in Swing",
     link: "https://github.com/manlaig/maze",
     more: "https://manlai.me/maze/"
   },
