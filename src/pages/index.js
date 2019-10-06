@@ -111,7 +111,7 @@ export class ProjectCard extends Component
            style={{textDecoration:"none"}}>
           <Paper style={{ textAlign: 'center',
             width: 340,
-            marginBottom: 20}} id="card-projects">
+            marginBottom: 60}} id="card-projects">
               {this.props.showImage && <CardMedia style = {{ height: 0,
                 paddingTop: '56%',
                 objectFit: 'cover',
@@ -149,16 +149,80 @@ export default class GridProjects extends Component
   {
     return (
       <Layout>
-        <h1>Projects</h1>
+        <h1 style={{textAlign:"center"}}>Projects</h1>
         <div id="quote"><i>"What I cannot create, I do not understand." - Richard Feynman</i></div>
-        <Grid container justify="center" spacing="40">
-        {projects.map(proj => { 
-          return (<ProjectCard showImage={true}
-                  title={proj.title} image={proj.image}
-                  description={proj.description}
-                  link={proj.link} more={proj.more}
-                  moreTitle={proj.moreTitle == null ? "Learn more" : proj.moreTitle}/>);
-          })}
+        
+        <Grid container justify="center" spacing={5} direction="row">
+          <ProjectCard showImage={true}
+                  title={projects[0].title} image={projects[0].image}
+                  description={projects[0].description}
+                  link={projects[0].link} more={projects[0].more}
+                  moreTitle={projects[0].moreTitle == null ? "Learn more" : projects[0].moreTitle}/>
+          <ProjectCard showImage={true}
+                  title={projects[1].title} image={projects[1].image}
+                  description={projects[1].description}
+                  link={projects[1].link} more={projects[1].more}
+                  moreTitle={projects[1].moreTitle == null ? "Learn more" : projects[1].moreTitle}/>
+        </Grid>
+        <Grid container justify="center" spacing={5} direction="row">
+          <ProjectCard showImage={true}
+                  title={projects[2].title} image={projects[2].image}
+                  description={projects[2].description}
+                  link={projects[2].link} more={projects[2].more}
+                  moreTitle={projects[2].moreTitle == null ? "Learn more" : projects[2].moreTitle}/>
+          <ProjectCard showImage={true}
+                  title={projects[3].title} image={projects[3].image}
+                  description={projects[3].description}
+                  link={projects[3].link} more={projects[3].more}
+                  moreTitle={projects[3].moreTitle == null ? "Learn more" : projects[3].moreTitle}/>
+        </Grid>
+        <Grid container justify="center" spacing={5} direction="row">
+          <ProjectCard showImage={true}
+                  title={projects[4].title} image={projects[4].image}
+                  description={projects[4].description}
+                  link={projects[4].link} more={projects[4].more}
+                  moreTitle={projects[4].moreTitle == null ? "Learn more" : projects[4].moreTitle}/>
+          <ProjectCard showImage={true}
+                  title={projects[5].title} image={projects[5].image}
+                  description={projects[5].description}
+                  link={projects[5].link} more={projects[5].more}
+                  moreTitle={projects[5].moreTitle == null ? "Learn more" : projects[5].moreTitle}/>
+        </Grid>
+        <Grid container justify="center" spacing={5} direction="row">
+          <ProjectCard showImage={true}
+                  title={projects[6].title} image={projects[6].image}
+                  description={projects[6].description}
+                  link={projects[6].link} more={projects[6].more}
+                  moreTitle={projects[6].moreTitle == null ? "Learn more" : projects[6].moreTitle}/>
+          <ProjectCard showImage={true}
+                  title={projects[7].title} image={projects[7].image}
+                  description={projects[7].description}
+                  link={projects[7].link} more={projects[7].more}
+                  moreTitle={projects[7].moreTitle == null ? "Learn more" : projects[7].moreTitle}/>
+        </Grid>
+        <Grid container justify="center" spacing={5} direction="row">
+          <ProjectCard showImage={true}
+                  title={projects[8].title} image={projects[8].image}
+                  description={projects[8].description}
+                  link={projects[8].link} more={projects[8].more}
+                  moreTitle={projects[8].moreTitle == null ? "Learn more" : projects[8].moreTitle}/>
+          <ProjectCard showImage={true}
+                  title={projects[9].title} image={projects[9].image}
+                  description={projects[9].description}
+                  link={projects[9].link} more={projects[9].more}
+                  moreTitle={projects[9].moreTitle == null ? "Learn more" : projects[9].moreTitle}/>
+        </Grid>
+        <Grid container justify="center" spacing={5} direction="row">
+          <ProjectCard showImage={true}
+                  title={projects[10].title} image={projects[10].image}
+                  description={projects[10].description}
+                  link={projects[10].link} more={projects[10].more}
+                  moreTitle={projects[10].moreTitle == null ? "Learn more" : projects[10].moreTitle}/>
+          <ProjectCard showImage={true}
+                  title={projects[11].title} image={projects[11].image}
+                  description={projects[11].description}
+                  link={projects[11].link} more={projects[11].more}
+                  moreTitle={projects[11].moreTitle == null ? "Learn more" : projects[11].moreTitle}/>
         </Grid>
       </Layout>
     );
