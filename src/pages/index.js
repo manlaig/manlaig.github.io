@@ -106,12 +106,12 @@ export class ProjectCard extends Component
   render()
   {
     return (
-      <Grid item>
+      <Grid item sm>
         <a href={this.props.more} target="_blank" rel="noopener noreferrer"
            style={{textDecoration:"none"}}>
           <Paper style={{ textAlign: 'center',
             width: 340,
-            marginBottom: 60}} id="card-projects">
+            marginBottom: 70}} id="card-projects">
               {this.props.showImage && <CardMedia style = {{ height: 0,
                 paddingTop: '56%',
                 objectFit: 'cover',
@@ -149,10 +149,10 @@ export default class GridProjects extends Component
   {
     return (
       <Layout>
-        <h1 style={{textAlign:"center"}}>Projects</h1>
+        <h1>Projects</h1>
         <div id="quote"><i>"What I cannot create, I do not understand." - Richard Feynman</i></div>
         
-        <Grid container justify="center" spacing={1} direction="row">
+        <Grid container spacing={0} direction="row">
           <ProjectCard showImage={true}
                   title={projects[0].title} image={projects[0].image}
                   description={projects[0].description}
@@ -164,7 +164,7 @@ export default class GridProjects extends Component
                   link={projects[1].link} more={projects[1].more}
                   moreTitle={projects[1].moreTitle == null ? "Learn more" : projects[1].moreTitle}/>
         </Grid>
-        <Grid container justify="center" spacing={1} direction="row">
+        <Grid container spacing={0} direction="row">
           <ProjectCard showImage={true}
                   title={projects[2].title} image={projects[2].image}
                   description={projects[2].description}
@@ -176,7 +176,7 @@ export default class GridProjects extends Component
                   link={projects[3].link} more={projects[3].more}
                   moreTitle={projects[3].moreTitle == null ? "Learn more" : projects[3].moreTitle}/>
         </Grid>
-        <Grid container justify="center" spacing={1} direction="row">
+        <Grid container spacing={0} direction="row">
           <ProjectCard showImage={true}
                   title={projects[4].title} image={projects[4].image}
                   description={projects[4].description}
@@ -188,7 +188,7 @@ export default class GridProjects extends Component
                   link={projects[5].link} more={projects[5].more}
                   moreTitle={projects[5].moreTitle == null ? "Learn more" : projects[5].moreTitle}/>
         </Grid>
-        <Grid container justify="center" spacing={1} direction="row">
+        <Grid container spacing={0} direction="row">
           <ProjectCard showImage={true}
                   title={projects[6].title} image={projects[6].image}
                   description={projects[6].description}
@@ -200,7 +200,7 @@ export default class GridProjects extends Component
                   link={projects[7].link} more={projects[7].more}
                   moreTitle={projects[7].moreTitle == null ? "Learn more" : projects[7].moreTitle}/>
         </Grid>
-        <Grid container justify="center" spacing={1} direction="row">
+        <Grid container spacing={0} direction="row">
           <ProjectCard showImage={true}
                   title={projects[8].title} image={projects[8].image}
                   description={projects[8].description}
@@ -212,7 +212,7 @@ export default class GridProjects extends Component
                   link={projects[9].link} more={projects[9].more}
                   moreTitle={projects[9].moreTitle == null ? "Learn more" : projects[9].moreTitle}/>
         </Grid>
-        <Grid container justify="center" spacing={1} direction="row">
+        <Grid container spacing={0} direction="row">
           <ProjectCard showImage={true}
                   title={projects[10].title} image={projects[10].image}
                   description={projects[10].description}
