@@ -38,6 +38,13 @@ export default function Blog({ data })
                         date={post.frontmatter.date} excerpt={post.frontmatter.excerpt} />
             )
           })}
+      <Grid container justify="center">
+        <Link to="/blog" style={{textDecoration:'none'}} title="Go to Blog">
+          <Button variant="contained" size="large">
+            All posts
+          </Button>
+        </Link>
+      </Grid>
       <h1 style={{marginTop:20}}>Past Projects</h1>
       <Grid container justify="center" spacing="40">
         {activeProjects.map(proj => { 
@@ -51,7 +58,7 @@ export default function Blog({ data })
       <Grid container justify="center">
         <Link to="/projects" style={{textDecoration:'none'}} title="Go to Projects">
           <Button variant="contained" size="large">
-            All Projects
+            All projects
           </Button>
         </Link>
       </Grid>

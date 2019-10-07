@@ -126,15 +126,6 @@ class PrimarySearchAppBar extends React.Component
             <Link to="/" title="Go to Home" style={{textDecoration:'none', color:'#FFF'}}><div class="name">Michael Ganzorig</div></Link>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Link
-                to='/'
-                style={{
-                  fontSize: '22px',textDecoration: 'none',
-                  color: 'rgba(255,255,255,0.75)',marginRight: '20px'}}>
-                  <SvgIcon>
-                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                  </SvgIcon>
-              </Link>
               <NavBarLink to="/about" title="About"/>
               <NavBarLink to="/projects" title="Projects"/>
               <NavBarLink to="/blog" title="Writing"/>
