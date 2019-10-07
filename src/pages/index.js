@@ -107,8 +107,6 @@ export class ProjectCard extends Component
   {
     return (
       <Grid item sm>
-        <a href={this.props.more} target="_blank" rel="noopener noreferrer"
-           style={{textDecoration:"none"}}>
           <Paper style={{ textAlign: 'center',
             width: 340,
             marginBottom: 70}} id="card-projects">
@@ -137,7 +135,6 @@ export class ProjectCard extends Component
                   </IconButton>
               </CardActions>
           </Paper>
-        </a>
       </Grid>
     );
   }
