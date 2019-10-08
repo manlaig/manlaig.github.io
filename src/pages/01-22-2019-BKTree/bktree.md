@@ -1,6 +1,6 @@
 ---
 path: "/bktree"
-date: "2019-01-22T18:47:43.962Z"
+date: "2018-12-01T18:47:43.962Z"
 title: "Awesome Data Structures, BK-Tree"
 excerpt: "BK-Tree is a data structure used to perform spell checks based on the edit distance (Levenshtein Distance) between two strings. The application of BK-Trees is approximate string matching."
 ---
