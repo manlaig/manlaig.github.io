@@ -19,8 +19,8 @@ const activeProjects = [
     image: "/static/images/survival-rush.gif",
     description: "A fun survival game for iOS and Android. Built in Unity",
     link: "https://github.com/manlaig/survival_rush",
-    more: "https://play.google.com/store/apps/details?id=com.manlaig.SurvivalRush",
-    moreTitle: "Play Store",
+    more: "https://apps.apple.com/us/app/survival-rush/id1496293709",
+    moreTitle: "App Store",
   },
 ]
 
