@@ -8,11 +8,12 @@ import { Link } from 'gatsby'
 
 const activeProjects = [
   {
-    title: "Snow Wars",
-    image: "/static/images/snow_wars.gif",
-    description: "Real-time strategy game in Unity. Inspired by Starcraft",
-    link: "https://github.com/manlaig/snow_wars",
-    more: "https://github.com/manlaig/snow_wars"
+    title: "VerbaMate",
+    image: "/static/images/verbamate.png",
+    description: "An Anonymous QA app launched to the UC Berkeley campus",
+    link: "https://apps.apple.com/us/app/verbamate/id1497272076",
+    more: "https://apps.apple.com/us/app/verbamate/id1497272076",
+    moreTitle: "App Store",
   },
   {
     title: "Survival Rush",

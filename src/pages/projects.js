@@ -12,11 +12,12 @@ import IconButton from '@material-ui/core/IconButton';
 
 export const projects = [
   {
-    title: "Snow Wars",
-    image: "/static/images/snow_wars.gif",
-    description: "Real-time strategy game in Unity. Inspired by Starcraft",
-    link: "https://github.com/manlaig/snow_wars",
-    more: "https://github.com/manlaig/snow_wars"
+    title: "VerbaMate",
+    image: "/static/images/verbamate.png",
+    description: "An Anonymous QA app launched to the UC Berkeley campus",
+    link: "https://apps.apple.com/us/app/verbamate/id1497272076",
+    more: "https://apps.apple.com/us/app/verbamate/id1497272076",
+    moreTitle: "App Store",
   },
   {
     title: "Survival Rush",
@@ -25,6 +26,20 @@ export const projects = [
     link: "https://github.com/manlaig/survival_rush",
     more: "https://apps.apple.com/us/app/survival-rush/id1496293709",
     moreTitle: "App Store",
+  },
+  {
+    title: "Snow Wars",
+    image: "/static/images/snow_wars.gif",
+    description: "Real-time strategy game in Unity. Inspired by Starcraft",
+    link: "https://github.com/manlaig/snow_wars",
+    more: "https://github.com/manlaig/snow_wars"
+  },
+  {
+    title: "AR Draw",
+    image: "/static/images/ar-draw.gif",
+    description: "Persistent Augmented Reality drawing app in Unity",
+    link: "https://github.com/manlaig/ar_draw",
+    more: "https://manlaig.github.io/AR_draw/"
   },
   {
     title: "Game Networking API",
@@ -41,13 +56,6 @@ export const projects = [
     more: "https://manlai.me/3d_graphics/"
   },
   {
-    title: "AR Draw",
-    image: "/static/images/ar-draw.gif",
-    description: "Persistent Augmented Reality drawing app in Unity",
-    link: "https://github.com/manlaig/ar_draw",
-    more: "https://manlaig.github.io/AR_draw/"
-  },
-  {
     title: "RTS Object Placement",
     image: "/static/images/object_placement.gif",
     description: "Dynamic grid-based building placement in Unity",
@@ -58,7 +66,7 @@ export const projects = [
   {
     title: "Multiplayer Chess",
     image: "/static/images/chess-app.png",
-    description: "Real-time chess and messaging app",
+    description: "Real-time chess and messaging app on the web",
     link: "https://github.com/manlaig/LiveChess",
     more: "http://chess-manlaig.herokuapp.com/",
     moreTitle: "demo",
@@ -79,13 +87,6 @@ export const projects = [
     more: "https://manlaig.github.io/pong_bots"
   },
   {
-    title: "Sort Visualizer",
-    image: "/static/images/merge_sort.gif",
-    description: "Visualizing sorting algorithms in Swing",
-    link: "https://github.com/manlaig/sort_visualizer",
-    more: "http://manlai.me/sort_visualizer/"
-  },
-  {
     title: "Maze",
     image: "/static/images/maze.gif",
     description: "Visualizing maze generation and solving algorithms in Swing",
@@ -98,6 +99,13 @@ export const projects = [
     description: "Implementing and visualizing popular graph algorithms in Java Swing",
     link: "https://github.com/manlaig/graph_algorithms",
     more: "https://manlai.me/graph_algorithms/"
+  },
+  {
+    title: "Sort Visualizer",
+    image: "/static/images/merge_sort.gif",
+    description: "Visualizing sorting algorithms in Swing",
+    link: "https://github.com/manlaig/sort_visualizer",
+    more: "http://manlai.me/sort_visualizer/"
   },
 ];
 
