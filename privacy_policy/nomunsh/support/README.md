@@ -15,14 +15,14 @@ Even if it's negative, I appreciate that you tried my app :)
 ### Account Deletion
 
 If you want your account deleted, you can totally do that too.
-Our app requests basic Facebook permissions (name and public profile picture), so we don't have your email in our database.
+Our app requests basic Facebook permissions (name and public profile picture), so we don't have your email or friends in our database.
 
-Furthermore, if you authenticate with Facebook and set a custom name, then only your public profile picture is unchanged.
+Furthermore, if you authenticate with Facebook and set a custom name, then only your public profile picture is left unchanged.
 This allows us to reduce costs on our backend and also avoid storing sensitive user data.
 
 If you want to get your account data wiped, please submit [this](https://forms.gle/t1dh81MDMFcsdasM7) form.
 
-With the information in the submitted form, I will make sure the user IDs match and send a confirmation once the data is deleted.
-I always liked the idea of releasing an app and supporting it. Please let me know how I can help you!
+With the information in the submitted form, I will make sure the user IDs match before deleting the account data and I'll send a confirmation once the data is deleted.
+I always liked the idea of releasing an app and supporting it. I'm happy to help with any requests. Please let me know how I can help you!
 
 Another method of contact can be through email (manlai@berkeley.edu).
