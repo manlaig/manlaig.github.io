@@ -83,6 +83,10 @@ You have the right to delete or request that We assist in deleting the Personal 
 
 Our app may give you the ability to delete certain information about you from within the app.
 
+There is a link within the app that directs you to [this](https://forms.gle/Sz5wSiMXHYKCSSdU6) form, which you can fill to request data deletion. The completion time for data deletion is around 24-48 hours.
+Or you can press in this link to access it:
+https://forms.gle/Sz5wSiMXHYKCSSdU6
+
 You may update, amend, or delete your information at any time by signing in to your Account, if you have one, and visiting the account settings section that allows you to manage your personal information. You may also contact us to request access to, correct, or delete any personal information that you have provided to ss.
 
 Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.
