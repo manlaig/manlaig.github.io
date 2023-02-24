@@ -1,65 +1,151 @@
-**Privacy Policy**
+# Privacy Policy
 
-Michael Ganzorig built the NomUnsh app as a Free app. This SERVICE is provided by Michael Ganzorig at no cost and is intended for use as is.
+Last updated: February 24, 2023
 
-This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+This Privacy Policy describes our policies and procedures on the collection, use and disclosure of your information when you use the app and tells you about your privacy rights and how the law protects you.
 
-If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+# Collecting and Using Your Personal Data
 
-The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at NomUnsh unless otherwise defined in this Privacy Policy.
+## Types of Data Collected
 
-**Information Collection and Use**
+### Personal Data
 
-For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to Facebook public name and profile picture. The information that I request will be retained on your device and is not collected by me in any way.
+While using our app, We may ask you to provide us with certain personally identifiable information that can be used to identify you. Personally identifiable information may include, but is not limited to:
 
-The app does use third-party services that may collect information used to identify you.
 
-Link to the privacy policy of third-party service providers used by the app
+- First name and last name
 
-*   [Google Play Services](https://www.google.com/policies/privacy/)
-*   [Facebook](https://www.facebook.com/about/privacy/update/printable)
+- Public profile picture
 
-**Log Data**
+- Usage Data
 
-I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
 
-**Cookies**
+### Usage Data
 
-Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
+Usage Data is collected automatically when using the app.
 
-This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
+Usage Data may include information such as unique device identifiers, browser type, browser version, the pages of our app that You visit, the time and date of your visit, the time spent on those pages, and other diagnostic data.
 
-**Service Providers**
+We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
 
-I may employ third-party companies and individuals due to the following reasons:
+### Information from Third-Party Social Media Services
 
-*   To facilitate our Service;
-*   To provide the Service on our behalf;
-*   To perform Service-related services; or
-*   To assist us in analyzing how our Service is used.
+The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:
 
-I want to inform users of this Service that these third parties have access to their Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
+- Facebook
 
-**Security**
+If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as your **display name** and your **profile picture** associated with that account.
 
-I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
+You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.
 
-**Links to Other Sites**
 
-This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
 
-**Children’s Privacy**
 
-These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do the necessary actions.
+### Information Collected while Using the Application
 
-**Changes to This Privacy Policy**
+While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:
 
-I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
+- Information regarding your **location**
 
-This policy is effective as of 2023-01-14
+- Pictures and other information from your Device's **camera** and **photo library**
 
-**Contact Us**
+We use this information to provide features of our app, to improve and customize our app. The information may be uploaded to the Company's servers and/or a Service Provider's server or it may be simply stored on Your device.
 
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at manlai1025@gmail.com.
+You can enable or disable access to this information at any time, through Your Device settings.
 
-This privacy policy page was created at [privacypolicytemplate.net](https://privacypolicytemplate.net) and modified/generated by [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)
+
+
+
+
+## Use of Your Personal Data
+
+The Company may use Personal Data for the following purposes:
+
+- __To provide and maintain our Service__, including to monitor the usage of our Service.
+- __To manage Your Account:__ to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.
+- __To manage Your requests:__ To attend and manage Your requests to Us.
+- __For other purposes__: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience. 
+
+We may share Your personal information in the following situations:
+
+- __With other users:__ when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside. If You interact with other users or register through a Third-Party Social Media Service, Your contacts on the Third-Party Social Media Service may see Your name, profile, and pictures. Similarly, other users will be able to view descriptions of Your activity, communicate with You and view Your profile.
+- __With Your consent__: We may disclose Your personal information for any other purpose with Your consent.
+
+## Retention of Your Personal Data
+
+The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
+
+The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
+
+## Delete Your Personal Data
+
+You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.
+
+Our app may give you the ability to delete certain information about you from within the app.
+
+You may update, amend, or delete your information at any time by signing in to your Account, if you have one, and visiting the account settings section that allows you to manage your personal information. You may also contact us to request access to, correct, or delete any personal information that you have provided to ss.
+
+Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.
+
+## Disclosure of Your Personal Data
+
+### Law enforcement
+
+Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).
+
+### Other legal requirements
+
+The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:
+
+- Comply with a legal obligation
+- Protect and defend the rights or property of the app
+- Prevent or investigate possible wrongdoing in connection with the app
+- Protect the personal safety of Users of the app or the public
+- Protect against legal liability
+
+## Security of Your Personal Data
+
+The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Children's Privacy
+
+Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
+
+If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
+
+
+# Links to Other Websites
+
+The app has links to a link to this Privacy Policy page and a data deletion page within the app.
+
+When users want to delete their account, they are directed to a form they can fill to send the data deletion request, as required by Apple. The completion time for data deletion is around 24-48 hours.
+
+# Changes to this Privacy Policy
+
+We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
+
+Our app does not store user emails, so we will send out a notification to notify users.
+
+You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+
+# Contact Us
+
+If you have any questions about this Privacy Policy, You can contact us:
+
+
+- By email: manlai1025@gmail.com
