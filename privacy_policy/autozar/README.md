@@ -1,4 +1,4 @@
-# Privacy Policy
+# AutoZar Privacy Policy
 
 Last updated: May 30, 2023
 
