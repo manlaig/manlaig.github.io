@@ -1,4 +1,4 @@
-## Talk AI App Support
+## AI English App Support
 
 Hello, thanks for stopping by. I know this is not much, but hopefully you can find anything you need here :)
 
