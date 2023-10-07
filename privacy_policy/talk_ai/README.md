@@ -1,4 +1,4 @@
-# Privacy Policy
+# AI English Privacy Policy
 
 Last updated: August 23, 2023
 
