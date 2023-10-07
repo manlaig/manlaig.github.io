@@ -1,4 +1,4 @@
-# Privacy Policy
+# NomUnsh Privacy Policy
 
 Last updated: February 24, 2023
 
