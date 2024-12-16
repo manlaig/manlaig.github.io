@@ -1,12 +1,12 @@
-# AI English Privacy Policy
+# Cosmo - AI English Tutor
 
-Last updated: August 23, 2023
+## Privacy Policy
+
+Last updated: December 16, 2024
 
 This Privacy Policy describes our policies and procedures on the collection, use and disclosure of your information when you use the app and tells you about your privacy rights and how the law protects you.
 
-# Collecting and Using Your Personal Data
-
-## Types of Data Collected
+## Types of Personal Data Collected
 
 ### Personal Data
 
@@ -125,20 +125,20 @@ The security of Your Personal Data is important to Us, but remember that no meth
 
 
 
-# Children's Privacy
+## Children's Privacy
 
 Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
 
 If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
 
 
-# Links to Other Websites
+## Links to Other Websites
 
 The app has links to a link to this Privacy Policy page and a data deletion page within the app.
 
 When users want to delete their account, they are directed to a form they can fill to send the data deletion request, as required by Apple. The completion time for data deletion is around 24-48 hours.
 
-# Changes to this Privacy Policy
+## Changes to this Privacy Policy
 
 We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
 
