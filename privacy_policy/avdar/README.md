@@ -1,4 +1,4 @@
-# AutoZar Privacy Policy
+# Avdar Privacy Policy
 
 Last updated: Jan 10, 2025
 
